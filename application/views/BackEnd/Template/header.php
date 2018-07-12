@@ -58,96 +58,60 @@
                 <div class="container-fluid">
                     <ul class="navbar-mobile__list list-unstyled">
                         <li class="has-sub">
-                            <a class="js-arrow" href="#">
+                            <a class="js-arrow" href="<?=base_url();?>index.php/Administrador">
                                 <i class="fas fa-tachometer-alt"></i>Inicio</a>
-                            <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
-                                <li>
-                                    <a href="<?=base_url();?>index.php/Administrador">Inicio</a>
-                                </li>
-                                <li>
-                                    <a href="index2.html">Dashboard 2</a>
-                                </li>
-                                <li>
-                                    <a href="index3.html">Dashboard 3</a>
-                                </li>
-                                <li>
-                                    <a href="index4.html">Dashboard 4</a>
-                                </li>
-                            </ul>
                         </li>
                         <li>
                             <a href="<?=base_url();?>index.php/Productos">
-                                <i class="fas fa-chart-bar"></i>Productos</a>
-                        </li>
-                        <li>
-                            <a href="table.html">
-                                <i class="fas fa-table"></i>Tables</a>
-                        </li>
-                        <li>
-                            <a href="form.html">
-                                <i class="far fa-check-square"></i>Forms</a>
+                                <i class="fa fa-sun-o"></i>Productos</a>
                         </li>
                         <li>
                             <a href="#">
-                                <i class="fas fa-calendar-alt"></i>Calendar</a>
+                                <i class="fa fa-shopping-cart"></i>Pedidos</a>
                         </li>
                         <li>
-                            <a href="map.html">
-                                <i class="fas fa-map-marker-alt"></i>Maps</a>
+                            <a href="#">
+                                <i class="fa fa-users"></i>Usuarios</a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-question-circle"></i>Preguntas frecuentes</a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-phone-square"></i>Contactos</a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-tags"></i>Categorias</a>
                         </li>
                         <li class="has-sub">
                             <a class="js-arrow" href="#">
-                                <i class="fas fa-copy"></i>Pages</a>
+                                <i class="fa fa-cogs"></i>Administradores</a>
                             <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
                                 <li>
-                                    <a href="login.html">Login</a>
+                                    <a href="#">Registro</a>
                                 </li>
                                 <li>
-                                    <a href="register.html">Register</a>
-                                </li>
-                                <li>
-                                    <a href="forget-pass.html">Forget Password</a>
+                                    <a href="#">Forget Password</a>
                                 </li>
                             </ul>
                         </li>
                         <li class="has-sub">
                             <a class="js-arrow" href="#">
-                                <i class="fas fa-desktop"></i>UI Elements</a>
+                                <i class="fas fa-desktop"></i>Metodos:</a>
                             <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
                                 <li>
-                                    <a href="button.html">Button</a>
+                                    <a href="#">Metodos de pago</a>
                                 </li>
                                 <li>
-                                    <a href="badge.html">Badges</a>
-                                </li>
-                                <li>
-                                    <a href="tab.html">Tabs</a>
-                                </li>
-                                <li>
-                                    <a href="card.html">Cards</a>
-                                </li>
-                                <li>
-                                    <a href="alert.html">Alerts</a>
-                                </li>
-                                <li>
-                                    <a href="progress-bar.html">Progress Bars</a>
-                                </li>
-                                <li>
-                                    <a href="modal.html">Modals</a>
-                                </li>
-                                <li>
-                                    <a href="switch.html">Switchs</a>
-                                </li>
-                                <li>
-                                    <a href="grid.html">Grids</a>
-                                </li>
-                                <li>
-                                    <a href="fontawesome.html">Fontawesome Icon</a>
-                                </li>
-                                <li>
-                                    <a href="typo.html">Typography</a>
+                                    <a href="#">Metodos de envío</a>
                                 </li>
                             </ul>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-calendar-plus-o"></i>Calendario</a>
                         </li>
                     </ul>
                 </div>
@@ -166,96 +130,60 @@
                 <nav class="navbar-sidebar">
                     <ul class="list-unstyled navbar__list">
                         <li class="active has-sub">
-                            <a class="js-arrow" href="#">
-                                <i class="fas fa-tachometer-alt"></i>Dashboard</a>
-                            <ul class="list-unstyled navbar__sub-list js-sub-list">
-                                <li>
-                                    <a href="<?=base_url();?>index.php/Administrador">Inicio</a>
-                                </li>
-                                <li>
-                                    <a href="index2.html">Dashboard 2</a>
-                                </li>
-                                <li>
-                                    <a href="index3.html">Dashboard 3</a>
-                                </li>
-                                <li>
-                                    <a href="index4.html">Dashboard 4</a>
-                                </li>
-                            </ul>
+                            <a class="js-arrow" href="<?=base_url();?>index.php/Administrador">
+                                <i class="fas fa-tachometer-alt"></i>Inicio</a>
                         </li>
                         <li>
                             <a href="<?=base_url();?>index.php/Productos">
-                                <i class="fas fa-chart-bar"></i>Productos</a>
-                        </li>
-                        <li>
-                            <a href="table.html">
-                                <i class="fas fa-table"></i>Tables</a>
-                        </li>
-                        <li>
-                            <a href="form.html">
-                                <i class="far fa-check-square"></i>Forms</a>
+                                <i class="fa fa-sun-o"></i>Productos</a>
                         </li>
                         <li>
                             <a href="#">
-                                <i class="fas fa-calendar-alt"></i>Calendar</a>
+                                <i class="fa fa-shopping-cart"></i>Pedidos</a>
                         </li>
                         <li>
-                            <a href="map.html">
-                                <i class="fas fa-map-marker-alt"></i>Maps</a>
+                            <a href="#">
+                                <i class="fa fa-users"></i>Usuarios</a>
                         </li>
-                        <li class="has-sub">
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-question-circle"></i>Preguntas Frecuentes</a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-phone-square"></i>Contactos</a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-tags"></i>Categorias</a>
+                        </li>
+                        <li class="#">
                             <a class="js-arrow" href="#">
-                                <i class="fas fa-copy"></i>Pages</a>
+                                <i class="fa fa-cogs"></i>Administradores</a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
-                                    <a href="login.html">Login</a>
+                                    <a href="#">Registro</a>
                                 </li>
                                 <li>
-                                    <a href="register.html">Register</a>
-                                </li>
-                                <li>
-                                    <a href="forget-pass.html">Forget Password</a>
+                                    <a href="#">Forget Password</a>
                                 </li>
                             </ul>
                         </li>
                         <li class="has-sub">
                             <a class="js-arrow" href="#">
-                                <i class="fas fa-desktop"></i>UI Elements</a>
+                                <i class="fas fa-desktop"></i>Metodos:</a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
-                                    <a href="button.html">Button</a>
+                                    <a href="#">Metodos de pago</a>
                                 </li>
                                 <li>
-                                    <a href="badge.html">Badges</a>
-                                </li>
-                                <li>
-                                    <a href="tab.html">Tabs</a>
-                                </li>
-                                <li>
-                                    <a href="card.html">Cards</a>
-                                </li>
-                                <li>
-                                    <a href="alert.html">Alerts</a>
-                                </li>
-                                <li>
-                                    <a href="progress-bar.html">Progress Bars</a>
-                                </li>
-                                <li>
-                                    <a href="modal.html">Modals</a>
-                                </li>
-                                <li>
-                                    <a href="switch.html">Switchs</a>
-                                </li>
-                                <li>
-                                    <a href="grid.html">Grids</a>
-                                </li>
-                                <li>
-                                    <a href="fontawesome.html">Fontawesome Icon</a>
-                                </li>
-                                <li>
-                                    <a href="typo.html">Typography</a>
+                                    <a href="#">Metodos de envío</a>
                                 </li>
                             </ul>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-calendar-plus-o"></i>Calendario</a>
                         </li>
                     </ul>
                 </nav>
@@ -406,28 +334,24 @@
                                                 </div>
                                                 <div class="content">
                                                     <h5 class="name">
-                                                        <a href="#">john doe</a>
+                                                        <a href="#">Usuario</a>
                                                     </h5>
-                                                    <span class="email">johndoe@example.com</span>
+                                                    <span class="email">usuario@example.com</span>
                                                 </div>
                                             </div>
                                             <div class="account-dropdown__body">
                                                 <div class="account-dropdown__item">
                                                     <a href="#">
-                                                        <i class="zmdi zmdi-account"></i>Account</a>
+                                                        <i class="zmdi zmdi-account"></i>Mi cuenta</a>
                                                 </div>
                                                 <div class="account-dropdown__item">
                                                     <a href="#">
-                                                        <i class="zmdi zmdi-settings"></i>Setting</a>
-                                                </div>
-                                                <div class="account-dropdown__item">
-                                                    <a href="#">
-                                                        <i class="zmdi zmdi-money-box"></i>Billing</a>
+                                                        <i class="zmdi zmdi-settings"></i>Configuracion</a>
                                                 </div>
                                             </div>
                                             <div class="account-dropdown__footer">
                                                 <a href="#">
-                                                    <i class="zmdi zmdi-power"></i>Logout</a>
+                                                    <i class="zmdi zmdi-power"></i>Salir</a>
                                             </div>
                                         </div>
                                     </div>
