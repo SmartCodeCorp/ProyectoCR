@@ -40,6 +40,12 @@
 			<script src="<?=base_url();?>sweetalert2/dist/sweetalert2.min.js"></script>
 		  	<link rel="stylesheet" href="sweetalert2/dist/sweetalert2.min.css">
 
+		  	<!--Calendar-->
+		  	<link href="<?=base_url();?>calendar/css/fullcalendar.min.css" rel="stylesheet">
+		    <script type="text/javascript" src="<?=base_url();?>calendar/js/jquery.min.js"></script>
+		    <script type="text/javascript" src="<?=base_url();?>calendar/js/moment.min.js"></script>
+		    <script type="text/javascript" src="<?=base_url();?>calendar/js/fullcalendar.min.js"></script>
+
 		</head>
 		<body>
 		  <header id="header">

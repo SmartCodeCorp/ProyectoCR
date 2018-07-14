@@ -19,5 +19,4 @@
 	<script type="text/javascript" src="<?=$file?>"></script>
 	<?php endforeach; ?>
 </body>
-
 </html>

@@ -1,25 +1,20 @@
 
-		<!-- start banner Area -->
-			<section class="banner-area relative" id="home">
-				<div class="overlay overlay-bg"></div>
-				<div class="container">
-					<div class="row fullscreen d-flex align-items-center justify-content-center">
-						<div class="banner-content col-lg-8 col-md-12">
-							<h1>
-								Calentadores
-								    Solares
-							</h1>
-							<p class="pt-10 pb-10 text-white">
-								Utilizando energía solar CUIDAMOS el ambiente.
-							</p>
-							<a href="<?=base_url();?>index.php/MiControlador/index/2" class="primary-btn text-uppercase">Productos</a>
-						</div>
-					</div>
+	<!-- start banner Area -->
+<section class="banner-area relative" id="home">
+	<div class="overlay overlay-bg"></div>
+		<div class="container">
+			<div class="row fullscreen d-flex align-items-center justify-content-center">
+				<div class="banner-content col-lg-8 col-md-12">
+					<h1>Calentadores Solares</h1>
+					<p class="pt-10 pb-10 text-white">Utilizando energía solar CUIDAMOS el ambiente.</p>
+					<a href="<?=base_url();?>index.php/MiControlador/index/2" class="primary-btn text-uppercase">Productos</a>
 				</div>
-			</section>
-			<!-- End banner Area -->
+			</div>
+		</div>
+</section>
+	<!-- End banner Area -->
 
-			<!-- Start appointment Area -->
+	<!-- Start appointment Area -->
 			<section class="appointment-area">
 				<div class="container">
 					<div class="row justify-content-between align-items-center pb-120 appointment-wrap">
@@ -33,9 +28,18 @@
 									<span>08.30 am - 07.30 pm</span>
 								</li>
 								<li>
-									<?php	
-										echo $this->calendar->generate($this->uri->segment(3), $this->uri->segment(4));
-									?>
+									<div class="container">
+					            		<div class="row">
+					            			<div class="col"></div>
+					            			<div class="col-5"><div id="Calendario"></div></div>
+					            			<div class="col"></div>
+					            		</div>
+					            	</div>
+					            	<script>
+								    	$(document).ready(function(){
+								    		$('#Calendario').fullCalendar();
+								    	});
+								    </script>
 								</li>
 							</ul>
 						</div>
@@ -51,6 +55,8 @@
 						</div>
 					</div>
 				</div>
+				
+			</section>
 
 			<!-- Start offered-service Area -->
 			<section class="offered-service-area section-gap">

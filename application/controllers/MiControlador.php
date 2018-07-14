@@ -18,24 +18,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       
 
       switch ($option) {
-        case 1:
-        $config  = array(
-            
-            'start_day' => 'monday',
-            'month_type' => 'long',
-            'day_type' => 'long'
-          );
-        $config ['template']='
-
-        {table_open}<table border="1" cellpadding="4" cellspacing="5" >{/table_open}
-        {table_close}</table>{/table_close}
-        ';
-     
-      $this->load->library('calendar', $config);
-      $data['titulo']='Libreria Calendar';
-      $data['contenido']='Calendario';
-      
-        $this->load->view('FrontEnd/index');
+        case 1:$this->load->view('FrontEnd/index');
           break;
         case 2:$this->load->view('FrontEnd/vw_productos');
           break;
