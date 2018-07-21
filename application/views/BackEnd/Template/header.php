@@ -62,7 +62,7 @@
                                 <i class="fas fa-tachometer-alt"></i>Inicio</a>
                         </li>
                         <li>
-                            <a href="<?=base_url();?>index.php/Productos">
+                            <a href="<?=base_url();?>index.php/Administrador/index/2">
                                 <i class="fa fa-sun-o"></i>Productos</a>
                         </li>
                         <li>
@@ -70,7 +70,7 @@
                                 <i class="fa fa-shopping-cart"></i>Pedidos</a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="<?=base_url();?>index.php/index/3">
                                 <i class="fa fa-users"></i>Usuarios</a>
                         </li>
                         <li>

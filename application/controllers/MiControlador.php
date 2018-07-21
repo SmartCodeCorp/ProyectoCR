@@ -15,12 +15,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
       $data['preguntas'] = $this->Mdl_PregFrecuentes->listarPreguntas();
       $data['productos'] = $this->Mdl_Productos->listarProductos();
-      
+
 
       switch ($option) {
         case 1:
         $config  = array(
-            
+
             'start_day' => 'monday',
             'month_type' => 'long',
             'day_type' => 'long'
@@ -30,11 +30,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         {table_open}<table border="1" cellpadding="4" cellspacing="5" >{/table_open}
         {table_close}</table>{/table_close}
         ';
-     
+
       $this->load->library('calendar', $config);
       $data['titulo']='Libreria Calendar';
       $data['contenido']='Calendario';
-      
+
         $this->load->view('FrontEnd/index');
           break;
         case 2:$this->load->view('FrontEnd/vw_productos');
@@ -57,6 +57,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           break;
         case 11:$this->load->view('FrontEnd/vw_confirmacion');
           break;
+
       }
 
       $this->load->view('FrontEnd/Template/footer');
@@ -71,6 +72,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     public function iniciar_sesion(){
       $this->load->view('FrontEnd/vw_login');
     }
+    public function registrar(){
+        $this->load->view('FrontEnd/vw_registro');
+    }
+
+
 
   }
 

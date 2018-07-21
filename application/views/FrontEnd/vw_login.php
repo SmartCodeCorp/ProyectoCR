@@ -23,13 +23,13 @@
 <!--===============================================================================================-->
 </head>
 <body>
-	<div class="limiter">
-		<div class="container-login100">
-			<div class="wrap-login100">
+	<div  class="limiter">
+		<div  class="container-login100">
+			<div  class="wrap-login100">
 				<div class="login100-pic js-tilt" data-tilt>
-					<img src="<?=base_url();?>FrontEnd/Template/img/img-01.png" alt="IMG">
+					<img src="<?=base_url();?>FrontEnd/Template/img/image.gif" alt="IMG" >
 					<div class="text-center p-t-12">
-						<a class="txt2" href="<?=base_url();?>index.php/MiControlador/index/1"> REGRESAR <i class="fa fa-long-arrow-left m-l-5" aria-hidden="true"></i>
+						<a class="txt2" href="<?=base_url();?>index.php/MiControlador/index/1"> REGRESAR <i aria-hidden="true"></i>
 						</a>
 					</div>
 				</div>
@@ -55,18 +55,11 @@
 							Iniciar sesión
 						</button>
 					</div>
+
 					<div class="text-center p-t-12">
-						<span class="txt1">
-							Olvidó su
-						</span>
-						<a class="txt2" href="#">
-							Usuario / Contraseña?
-						</a>
-					</div>
-					<div class="text-center p-t-12">
-						<a class="txt2" href="#">
+						<a class="txt2" href="<?=base_url();?>index.php/MiControlador/registrar">
 							REGISTRATE
-							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+							<i  aria-hidden="true"></i>
 						</a>
 					</div>
 				</form>
