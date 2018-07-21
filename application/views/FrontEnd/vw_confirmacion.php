@@ -8,10 +8,9 @@ if(!$this->session->has_userdata('email', 'status_usuario', 'privilegios')){
         $email = $_SESSION['email'];
         //asegurar que no tenga "", <, > o &
         $email = htmlspecialchars($email);       
-
         //usarla donde quieras
-        
 		}
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -39,6 +38,7 @@ if(!$this->session->has_userdata('email', 'status_usuario', 'privilegios')){
         	</button>
       		<h4>¡¡EN HORA BUENA!! YA ERES PARTE DE: <strong>CASA ROCHA</strong></h4>
       		<h4><?php echo "<p>¡Hola $email!</p>"; ?></h4>
+      		<h4><?php echo "<p>¡Tus privilegios $privilegios!</p>"; ?></h4>
     		</div>
     		<script>
     			swal({

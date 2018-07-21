@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
   class Login extends CI_Controller{
 
-    public function __construct(){
+    function __construct(){
       parent::__construct();
       $this->load->Model('Mdl_Login');
     }
@@ -18,9 +18,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
       $entrar = $this->Mdl_Login->log_in($email, $password);
       if ($entrar == 0) {
-         $this->load->view('FrontEnd/vw_filosofia');
+        redirect('Login');
+        //$this->load->view('FrontEnd/vw_filosofia');
       }else{
-        redirect('Administrador/index');
+        redirect('MiControlador/index/1');
       }
       
     }

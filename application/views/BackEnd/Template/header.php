@@ -34,6 +34,9 @@
     <!-- Main CSS-->
     <link href="<?=base_url();?>BackEnd/css/theme.css" rel="stylesheet" media="all">
 
+    <!-- Calendar-->
+    <link href="<?=base_url();?>calendar/css/fullcalendar.min.css" rel="stylesheet">
+
 </head>
 
 <body class="animsition">
@@ -110,7 +113,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="<?=base_url();?>index.php/Calendario">
                                 <i class="fa fa-calendar-plus-o"></i>Calendario</a>
                         </li>
                     </ul>
@@ -182,7 +185,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="<?=base_url();?>index.php/Calendario">
                                 <i class="fa fa-calendar-plus-o"></i>Calendario</a>
                         </li>
                     </ul>
@@ -387,6 +390,11 @@
 
     <!-- Main JS-->
     <script src="<?=base_url();?>BackEnd/js/main.js"></script>
+
+    <!--Calendar-->
+    <script type="text/javascript" src="<?=base_url();?>calendar/js/jquery.min.js"></script>
+    <script type="text/javascript" src="<?=base_url();?>calendar/js/moment.min.js"></script>
+    <script type="text/javascript" src="<?=base_url();?>calendar/js/fullcalendar.min.js"></script>
 </body>
 
 </html>
