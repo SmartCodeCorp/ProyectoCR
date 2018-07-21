@@ -5,6 +5,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="<?=base_url().'FrontEnd/Template/img/icons/logoR.ico';?>">
 	<link rel="icon" type="image/png" href="<?=base_url();?>/FrontEnd/Login/images/profile.png"/>
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="<?=base_url();?>FrontEnd/Login/vendor/bootstrap/css/bootstrap.min.css">
