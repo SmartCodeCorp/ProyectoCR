@@ -165,19 +165,19 @@
                                     <a href="#">Registro</a>
                                 </li>
                                 <li>
-                                    <a href="#">Forget Password</a>
+                                    <a href="#">Recuperar contraseña</a>
                                 </li>
                             </ul>
                         </li>
                         <li class="has-sub">
                             <a class="js-arrow" href="#">
-                                <i class="fas fa-desktop"></i>Metodos:</a>
+                                <i class="fas fa-desktop"></i>Métodos:</a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
-                                    <a href="#">Metodos de pago</a>
+                                    <a href="<?=base_url();?>index.php/Metodos_Pago">Métodos de pago</a>
                                 </li>
                                 <li>
-                                    <a href="#">Metodos de envío</a>
+                                    <a href="#">Métodos de envío</a>
                                 </li>
                             </ul>
                         </li>
