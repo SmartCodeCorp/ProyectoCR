@@ -70,7 +70,7 @@
                                 <i class="fa fa-shopping-cart"></i>Pedidos</a>
                         </li>
                         <li>
-                            <a href="<?=base_url();?>index.php/index/3">
+                            <a href="<?=base_url();?>index.php/Administrador/index/3">
                                 <i class="fa fa-users"></i>Usuarios</a>
                         </li>
                         <li>
@@ -142,7 +142,7 @@
                                 <i class="fa fa-shopping-cart"></i>Pedidos</a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="<?=base_url();?>index.php/Usuario">
                                 <i class="fa fa-users"></i>Usuarios</a>
                         </li>
                         <li>
