@@ -19,6 +19,7 @@
 
                         <div class="row m-t-25">
                             <div class="col-sm-6 col-lg-3">
+                                <a href="<?=base_url();?>index.php/Usuario">
                                 <div class="overview-item overview-item--c1">
                                     <div class="overview__inner">
                                         <div class="overview-box clearfix">
@@ -35,8 +36,10 @@
                                         </div>
                                     </div>
                                 </div>
+                                </a>
                             </div>
                             <div class="col-sm-6 col-lg-3">
+                                <a href="<?=base_url();?>index.php/Productos">
                                 <div class="overview-item overview-item--c2">
                                     <div class="overview__inner">
                                         <div class="overview-box clearfix">
@@ -53,8 +56,10 @@
                                         </div>
                                     </div>
                                 </div>
+                                </a>
                             </div>
                             <div class="col-sm-6 col-lg-3">
+                                <a href="<?=base_url();?>index.php/Productos">
                                 <div class="overview-item overview-item--c3">
                                     <div class="overview__inner">
                                         <div class="overview-box clearfix">
@@ -71,6 +76,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                </a>
                             </div>
                             <div class="col-sm-6 col-lg-3">
                                 <div class="overview-item overview-item--c4">

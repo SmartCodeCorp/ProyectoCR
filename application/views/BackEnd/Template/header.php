@@ -80,7 +80,7 @@ if(!$this->session->has_userdata('email')){
                                 <i class="fas fa-tachometer-alt"></i>Inicio</a>
                         </li>
                         <li>
-                            <a href="<?=base_url();?>index.php/Administrador/index/2">
+                            <a href="<?=base_url();?>index.php/Productos">
                                 <i class="fa fa-sun-o"></i>Productos</a>
                         </li>
                         <li>
@@ -88,8 +88,12 @@ if(!$this->session->has_userdata('email')){
                                 <i class="fa fa-shopping-cart"></i>Pedidos</a>
                         </li>
                         <li>
-                            <a href="<?=base_url();?>index.php/Administrador/index/3">
+                            <a href="<?=base_url();?>index.php/Usuarios">
                                 <i class="fa fa-users"></i>Usuarios</a>
+                        </li>
+                        <li>
+                            <a href="<?=base_url();?>index.php/Direcciones">
+                                <i class="fa fa-map-marker-alt"></i>Direcciones</a>
                         </li>
                         <li>
                             <a href="#">
@@ -163,6 +167,10 @@ if(!$this->session->has_userdata('email')){
                         <li>
                             <a href="<?=base_url();?>index.php/Usuario">
                                 <i class="fa fa-users"></i>Usuarios</a>
+                        </li>
+                        <li>
+                            <a href="<?=base_url();?>index.php/Direcciones">
+                                <i class="fa fa-map-marker-alt"></i>Direcciones</a>
                         </li>
                         <li>
                             <a href="#">
