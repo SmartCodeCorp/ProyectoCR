@@ -1,3 +1,18 @@
+<?php
+if(!$this->session->has_userdata('email')){
+    redirect('Login_Adm');
+}else{
+    //session_start();
+    if (isset($_SESSION['email'])) {
+        //asignar a variable
+        $email = $_SESSION['email'];
+        //asegurar que no tenga "", <, > o &
+        $email = htmlspecialchars($email);       
+        //usarla donde quieras
+        echo "<p>¡Hola $email!</p>";
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -125,8 +140,9 @@
         <!-- MENU SIDEBAR-->
         <aside class="menu-sidebar d-none d-lg-block">
             <div class="logo">
-                <a href="#">
-                    <img src="images/icon/logo.png" alt="Cool Admin" />
+                <a href="<?=base_url();?>index.php/Administrador">
+                    <p>Casa Rocha</p>
+                    <!--img src="<?=base_url();?>BackEnd/images/icon/logo.png" alt="Casa Rocha"/>-->
                 </a>
             </div>
             <div class="menu-sidebar__content js-scrollbar1">
@@ -323,23 +339,23 @@
                                 <div class="account-wrap">
                                     <div class="account-item clearfix js-item-menu">
                                         <div class="image">
-                                            <img src="images/icon/avatar-01.jpg" alt="John Doe" />
+                                            <img src="<?=base_url();?>BackEnd/images/icon/avatar-01.png"/>
                                         </div>
                                         <div class="content">
-                                            <a class="js-acc-btn" href="#">john doe</a>
+                                            <a class="js-acc-btn" href="#"><?php echo "<p>$email</p>";?></a>
                                         </div>
                                         <div class="account-dropdown js-dropdown">
                                             <div class="info clearfix">
                                                 <div class="image">
                                                     <a href="#">
-                                                        <img src="images/icon/avatar-01.jpg" alt="John Doe" />
+                                                        <img src="<?=base_url();?>BackEnd/images/icon/avatar-01.png" alt="John Doe" />
                                                     </a>
                                                 </div>
                                                 <div class="content">
                                                     <h5 class="name">
-                                                        <a href="#">Usuario</a>
+                                                        <a href="#"><?php echo "$email";?></a>
                                                     </h5>
-                                                    <span class="email">usuario@example.com</span>
+                                                    <span class="email"><?php echo "$email";?></span>
                                                 </div>
                                             </div>
                                             <div class="account-dropdown__body">
@@ -353,7 +369,7 @@
                                                 </div>
                                             </div>
                                             <div class="account-dropdown__footer">
-                                                <a href="#">
+                                                <a href="<?=base_url();?>index.php/Login_Adm/logout">
                                                     <i class="zmdi zmdi-power"></i>Salir</a>
                                             </div>
                                         </div>
@@ -365,7 +381,6 @@
                 </div>
             </header>
     <!-- HEADER DESKTOP-->
-
 
     <!-- Jquery JS-->
     <script src="<?=base_url();?>BackEnd/vendor/jquery-3.2.1.min.js"></script>

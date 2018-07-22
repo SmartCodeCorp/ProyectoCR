@@ -19,7 +19,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       $entrar = $this->Mdl_Login->log_in($email, $password);
       if ($entrar == 0) {
         redirect('Login');
-        //$this->load->view('FrontEnd/vw_filosofia');
       }else{
         redirect('MiControlador/index/1');
       }

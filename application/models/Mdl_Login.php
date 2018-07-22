@@ -15,4 +15,13 @@ class Mdl_Login extends CI_Model
 		$usuario = $this->db->get('usuarios');
 		return $usuario->num_rows();
 	}
+
+	public function loginAdm($email, $password){
+		$data = array(
+			'email' => $email,
+			'password' => $password);
+		$this->db->where($data);
+		$usuario = $this->db->get('usuarios');
+		return $usuario->num_rows();
+	}
 }

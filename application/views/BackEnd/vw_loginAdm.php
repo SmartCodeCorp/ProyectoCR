@@ -32,12 +32,12 @@
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
-				<form class="login100-form validate-form">
+				<form class="login100-form validate-form" action="<?=base_url().'index.php/Login_Adm/login';?>" method="POST">
 					<span class="login100-form-title p-b-26">
 						Bienvenido Administrador
 					</span>
 					<span class="login100-form-title p-b-48">
-						<img src="<?=base_url();?>BackEnd/Login_Adm/images/icons/logoCR.ico">
+						<i class="zmdi zmdi-font"></i>
 					</span>
 
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is: a@b.c">
@@ -49,14 +49,14 @@
 						<span class="btn-show-pass">
 							<i class="zmdi zmdi-eye"></i>
 						</span>
-						<input class="input100" type="password" name="pass">
+						<input class="input100" type="password" name="password">
 						<span class="focus-input100" data-placeholder="Contraseña"></span>
 					</div>
 
 					<div class="container-login100-form-btn">
 						<div class="wrap-login100-form-btn">
 							<div class="login100-form-bgbtn"></div>
-							<button class="login100-form-btn">
+							<button class="login100-form-btn" >
 								Iniciar Sesión
 							</button>
 						</div>
