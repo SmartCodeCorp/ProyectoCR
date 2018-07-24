@@ -47,6 +47,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
        }
      }
 
+    public function registro_admin(){
+      $this->db->set('id_usuario',0)
+            ->set('nombre_usuario',$this->name)
+            ->set('apellidos',$this->apellidos)
+            ->set('email',$this->email)
+            ->set('password',$this->password)
+            ->set('telefono',$this->telefono)
+            ->set('status_usuario',$this->status)
+            ->set('privilegios',$this->privilegios);
+      $this->db->insert('usuarios');
+
+    }
+
      public function vista_registrate(){
       $this->load->view('FrontEnd/Template/header');
       $this->load->view('FrontEnd/vw_registrate');
@@ -60,8 +73,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
      $this->form_validation->set_rules('email', 'email' , 'trim|required');
      $this->form_validation->set_rules('password' , 'password' , 'trim|required');
     }
-
-    
+ 
   }
 
   ?>

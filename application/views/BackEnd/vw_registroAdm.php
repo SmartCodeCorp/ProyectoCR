@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Login Administración</title>
+	<title>Registro Administrador</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
@@ -39,36 +39,41 @@
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
-				<form class="login100-form validate-form" action="<?=base_url().'index.php/Login_Adm/login';?>" method="POST">
+				<form class="login100-form validate-form" action="<?=base_url().'index.php/Login_Adm/registroAdm';?>" method="POST">
 					<span class="login100-form-title p-b-26">
-						Bienvenido Administrador
-					</span>
-					<p>
-						<?php
-			                $success_msg= $this->session->flashdata('success_msg');
-			                  if($success_msg){?>
+						Registrate
+						<p>
+							<?php
+			                  $error_msg=$this->session->flashdata('error_msg');
+			                  if($error_msg){?>
 			                    <script>
 			                    	swal({
-									position: 'top-end',
-									type: 'success',
-									title: 'Your work has been saved',
-									showConfirmButton: false,
-									timer: 1600
+									  type: 'error',
+									  title: 'Oops...',
+									  text: 'Lo sentimos ese email ya esta registrado!',
+									  footer: '<a href>Why do I have this issue?</a>'
 									})
 			                    </script>
 			                  <?php
 			              		}
 			                   ?>
-					</p>
+						</p>
+					</span>
 					<span class="login100-form-title p-b-48">
 						<i class="zmdi zmdi-font"></i>
 					</span>
-
+					<div class="wrap-input100 validate-input">
+						<input class="input100" type="text" name="nombre">
+						<span class="focus-input100" data-placeholder="Nombre"></span>
+					</div>
+					<div class="wrap-input100 validate-input">
+						<input class="input100" type="text" name="apellidos">
+						<span class="focus-input100" data-placeholder="Apellidos"></span>
+					</div>
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is: a@b.c">
 						<input class="input100" type="text" name="email">
 						<span class="focus-input100" data-placeholder="Correo electrónico"></span>
 					</div>
-
 					<div class="wrap-input100 validate-input" data-validate="Enter password">
 						<span class="btn-show-pass">
 							<i class="zmdi zmdi-eye"></i>
@@ -76,23 +81,31 @@
 						<input class="input100" type="password" name="password">
 						<span class="focus-input100" data-placeholder="Contraseña"></span>
 					</div>
+					<div class="wrap-input100 validate-input">
+						<input class="input100" type="text" name="telefono">
+						<span class="focus-input100" data-placeholder="Teléfono"></span>
+					</div>
+					<div>
+						<input class="input100" type="hidden" name="status" value="0">
+						<input class="input100" type="hidden" name="privilegios" value="2">
+					</div>
 
 					<div class="container-login100-form-btn">
 						<div class="wrap-login100-form-btn">
 							<div class="login100-form-bgbtn"></div>
 							<button class="login100-form-btn" >
-								Iniciar Sesión
+								Registrar
 							</button>
 						</div>
 					</div>
 
 					<div class="text-center p-t-115">
 						<span class="txt1">
-							¿No tienes una cuenta?
+							Ya tengo una cuenta
 						</span>
 
-						<a class="txt2" href="<?=base_url().'index.php/Login_Adm/frmAddAdmin';?>">
-							Crear una cuenta.
+						<a class="txt2" href="<?=base_url().'index.php/Login_Adm';?>">
+							Iniciar sessión.
 						</a>
 					</div>
 				</form>

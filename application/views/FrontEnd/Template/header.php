@@ -39,7 +39,7 @@ CSS
 <script src="<?=base_url();?>sweetalert2/dist/sweetalert2.all.min.js"></script>
 <script src="https://unpkg.com/promise-polyfill"></script>	
 <script src="<?=base_url();?>sweetalert2/dist/sweetalert2.min.js"></script>
-	<link rel="stylesheet" href="sweetalert2/dist/sweetalert2.min.css">
+<link rel="stylesheet" href="sweetalert2/dist/sweetalert2.min.css">
 
 	<!--Calendar-->
 	<link href="<?=base_url();?>calendar/css/fullcalendar.min.css" rel="stylesheet">
