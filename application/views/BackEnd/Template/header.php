@@ -7,7 +7,7 @@ if(!$this->session->has_userdata('email')){
         //asignar a variable
         $email = $_SESSION['email'];
         //asegurar que no tenga "", <, > o &
-        $email = htmlspecialchars($email);       
+        $email = htmlspecialchars($email);
         //usarla donde quieras
         echo "<p>¡Hola $email!</p>";
     }
@@ -124,10 +124,10 @@ if(!$this->session->has_userdata('email')){
                                 <i class="fas fa-desktop"></i>Metodos:</a>
                             <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
                                 <li>
-                                    <a href="#">Metodos de pago</a>
+                                    <a href="<?=base_url();?>index.php/Metodos_Pago">Metodos de pago</a>
                                 </li>
                                 <li>
-                                    <a href="#">Metodos de envío</a>
+                                    <a href="<?=base_url();?>index.php/Metodos_Envio">Metodos de envío</a>
                                 </li>
                             </ul>
                         </li>
@@ -204,7 +204,7 @@ if(!$this->session->has_userdata('email')){
                                     <a href="<?=base_url();?>index.php/Metodos_Pago">Métodos de pago</a>
                                 </li>
                                 <li>
-                                    <a href="#">Métodos de envío</a>
+                                    <a href="<?=base_url();?>index.php/Metodos_Envio">Métodos de envío</a>
                                 </li>
                             </ul>
                         </li>
