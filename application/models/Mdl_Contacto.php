@@ -8,10 +8,10 @@ class Mdl_Contacto extends CI_Model{
 
   public function agregar_contacto($nombre, $asunto, $email, $mensaje){
     $data = array(
-      'nombre_contacto' => $nombre,
+      'nombre_contacto' => $nombre, 
       'asunto' => $asunto,
       'email_contacto' => $email,
-      'mensaje' => $mensaje,
+      'mensaje' => $mensaje
       );
     $this->db->insert('contactos', $data);
   }

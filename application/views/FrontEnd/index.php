@@ -41,12 +41,28 @@
 						</li>
 					</ul>
 			</div>
+			<!--Seccion para los contactos-->
 			<div class="col-lg-6 col-md-6 appointment-right pt-60 pb-60">
-				<form class="form-wrap" action="<?=base_url().'index.php/Contacto/agregar_contacto';?>" method="POST">
+				<form class="form-wrap" action="<?=base_url().'index.php/Contacto/agregar';?>" method="POST">
+					<p><?php
+			                $success_msg= $this->session->flashdata('success_msg');
+			                  if($success_msg){?>
+			                    <script>
+			                    	swal({
+									position: 'top-end',
+									type: 'success',
+									title: 'Tu contacto se a guardado',
+									showConfirmButton: false,
+									timer: 2000
+									})
+			                    </script>
+			                  <?php
+			              		}
+			                   ?></p>
 					<h3 class="pb-20 text-center mb-30">CONTACTO</h3>
-					<input type="text" class="form-control" name="nombre" placeholder="Nombre" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Nombre'" value="<?=set_value('Nombre') ;?>">
+					<input type="text" class="form-control" name="nombre_contacto" placeholder="Nombre" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Nombre'" value="<?=set_value('Nombre') ;?>">
 					<input type="text" class="form-control" name="asunto" placeholder="Asunto " onfocus="this.placeholder = ''" onblur="this.placeholder = 'Asunto'" value="<?=set_value('Asunto') ;?>">
-					<input type="email" class="form-control" name="email" placeholder="Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Correo'" value="<?=set_value('Correo electronico') ;?>">
+					<input type="email" class="form-control" name="email_contacto" placeholder="Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Correo'" value="<?=set_value('Correo electronico') ;?>">
 					<textarea name="mensaje" class="" rows="5" placeholder="Mensaje" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Mensaje'" value="<?=set_value('Mensaje') ;?>"></textarea>
 					<?=validation_errors();?>
 					<button class="primary-btn text-uppercase">Enviar</button>
