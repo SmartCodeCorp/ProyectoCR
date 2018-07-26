@@ -61,10 +61,25 @@
 
 							?>
 
+							<?php
+			                  $error_msg=$this->session->flashdata('error_msg');
+			                  if($error_msg){?>
+			                    <script>
+			                    	swal({
+									  type: 'error',
+									  title: 'Oops...',
+									  text: 'Lo sentimos ese email ya esta registrado!',
+									  footer: '<a href>Why do I have this issue?</a>'
+									})
+			                    </script>
+			                  <?php
+			              		}
+			                   ?>
+
 			<!-- Registrar cuenta -->
 			<div class="col s0 m0 l3"></div>
 			<div class="col s12 m12 l6 "  id="signup ">
-				<form name="signup" method="post" action="<?=base_url();?>index.php/MiControlador/iniciar_sesion" onsubmit="return validar();">
+				<form name="signup" method="post" action="<?=base_url();?>index.php/Login_User/registroUser" onsubmit="return validar();">
 					<br><label><h4 align="center">Registra una cuenta nueva:</h4></label>
 					<br><label>Nombre(s)</label>
 					<input type="text" name="nombre" id="nombre">
@@ -89,7 +104,7 @@
 						<input  type="hidden" name="status" id="status" value="1">
 					</div>
 					<div class="col s6">
-					
+
 						<input  type="hidden" name="privilegios" id="privilegios" value="3">
 					</div>
 					<div class="center col s12 m12 l12">

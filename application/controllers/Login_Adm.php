@@ -22,7 +22,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	    	if ($entrar == 0) {
 	    		$this->index();
 	      	}else{
-	      		$this->session->set_userdata('email', $email); 
+	      		$this->session->set_userdata('email', $email);
 	        	redirect('Administrador');
 	      }
   	}
@@ -45,11 +45,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       if($email_check){
       	$this->Mdl_Login->registro_admin();
       	$this->session->set_flashdata('success_msg', 'Registro exitoso. Ahora inicia session en tu cuenta.');
-      		redirect('Login_Adm');  		
+      		redirect('Login_Adm');
 		}else{
 			$this->session->set_flashdata('error_msg', 'Error,Ya existe ese correo electrónico');
-			redirect('Login_Adm/frmAddAdmin'); 
-			
+			redirect('Login_Adm/frmAddAdmin');
+
 		}
     }
 
