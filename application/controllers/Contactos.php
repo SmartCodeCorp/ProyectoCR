@@ -1,5 +1,5 @@
 <?php
-class Preguntas_Frecuentes extends CI_Controller
+class Contactos extends CI_Controller
 {
 	function __construct(){
 		parent::__construct();
@@ -8,10 +8,11 @@ class Preguntas_Frecuentes extends CI_Controller
 
 	public function index(){
 		$crud = new grocery_CRUD();
-		$crud->set_table('preguntasfrecuentes');
+		$crud->set_table('contactos');
+		
 		$output = $crud->render();
 		$this->load->view('BackEnd/Template/header');
-		$this->load->view('BackEnd/vw_preguntasfrecuentes', $output);
+		$this->load->view('BackEnd/vw_productos', $output);
 		$this->load->view('BackEnd/Template/footer');
 	}
 }
