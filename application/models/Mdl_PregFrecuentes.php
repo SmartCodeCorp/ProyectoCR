@@ -10,5 +10,12 @@ class Mdl_PregFrecuentes extends CI_Model{
 		return $preguntas->result();
 	}
 
+	public function agregarDuda($pregunta, $status){
+
+		$data = array('pregunta'=>$pregunta, 'status_pregunta'=>$status);
+		$this->db->insert('preguntasfrecuentes', $data);
+
+	}
+
 }
 ?>
