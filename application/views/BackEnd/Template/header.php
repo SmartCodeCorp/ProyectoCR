@@ -96,7 +96,7 @@ if(!$this->session->has_userdata('email')){
                                 <i class="fa fa-map-marker-alt"></i>Direcciones</a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="<?=base_url();?>index.php/Preguntas_Frecuentes">
                                 <i class="fa fa-question-circle"></i>Preguntas frecuentes</a>
                         </li>
                         <li>
@@ -173,7 +173,7 @@ if(!$this->session->has_userdata('email')){
                                 <i class="fa fa-map-marker-alt"></i>Direcciones</a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="<?=base_url();?>index.php/Preguntas_Frecuentes">
                                 <i class="fa fa-question-circle"></i>Preguntas Frecuentes</a>
                         </li>
                         <li>
