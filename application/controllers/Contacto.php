@@ -5,20 +5,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   {
   function __construct(){
      parent::__construct();
-     $this->load->Model('Mdl_Usuarios');
+     $this->load->Model('Mdl_Contacto');
      $this->load->library('session');
   }
 
-  public function agregar_contacto(){
-   	$nombre = $this->input->post('nombre');
+  public function agregar(){
+
+   	$nombre = $this->input->post('nombre_contacto');
    	$asunto = $this->input->post('asunto');
-   	$email = $this->input->post('email');
+   	$email = $this->input->post('email_contacto');
    	$mensaje = $this->input->post('mensaje');
 
-   	$this->form_validation->set_rules('nombre', 'Nombre' , 'trim|required');
-    $this->form_validation->set_rules('asunto', 'Asunto' , 'trim|required');
-    $this->form_validation->set_rules('email', 'Correo electronico' , 'trim|required');
-    $this->form_validation->set_rules('mensaje', 'Mensaje' , 'trim|required');
+   	$this->form_validation->set_rules('nombre_contacto', 'nombre' , 'trim|required');
+    $this->form_validation->set_rules('asunto', 'asunto' , 'trim|required');
+    $this->form_validation->set_rules('email_contacto', 'correo electronico' , 'trim|required');
+    $this->form_validation->set_rules('mensaje', 'mensaje' , 'trim|required');
     
     $this->form_validation->set_message('required' , 'El campo %s es obligatorio');
     $this->form_validation->set_message('trim', 'El campo %s debe contener su informacion');
@@ -27,6 +28,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     {
     	$this->vista_inicio();
     }else {
+      $this->session->set_flashdata('success_msg', 'Se a enviado tu contacto.');
 	    $this->Mdl_Contacto->agregar_contacto($nombre, $asunto, $email, $mensaje);
 	    redirect('MiControlador/index/1');
     }
