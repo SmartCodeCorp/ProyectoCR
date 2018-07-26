@@ -69,55 +69,32 @@
 					<br><label>Nombre(s)</label>
 					<input type="text" name="nombre" id="nombre">
 					<div class="col s6">
-						<label>Apellido Paterno</label>
-						<input type="text" name="apellidopaterno" id="apellidopaterno">
+						<label>Apellidos</label>
+						<input type="text" name="apellidos" id="apellidos">
 					</div>
 					<div class="col s6">
-						<label>Apellido Materno</label>
-						<input  type="text" name="apellidomaterno" id="apellidomaterno">
-					</div>
-					<label>Genero</label><br><br>
-					<input name="Genero" type="radio" id="Masculino"/>
-					<label for="Masculino">Masculino</label>
-					<input name="Genero" type="radio" id="Femenino"/>
-					<label for="Femenino" class="right">Femenino</label><br><br>
-					<label class="col s12 m12 l12">Fecha de nacimiento: DD/MM/YYYY</label>
-					<div class="col s4 m4 l4">
-						<input type="text" name="day" id="day" placeholder="Día">
-					</div>
-					<select id="opc" class="browser-default col s4 m4 l4">
-						<option value="0" disabled selected>Mes</option>
-						<option value="01">Enero</option>
-						<option value="02">Febrero</option>
-						<option value="03">Marzo</option>
-						<option value="04">Abril</option>
-						<option value="05">Mayo</option>
-						<option value="06">Junio</option>
-						<option value="07">Julio</option>
-						<option value="08">Agosto</option>
-						<option value="09">Septiembre</option>
-						<option value="10">Octubre</option>
-						<option value="11">Noviembre</option>
-						<option value="12">Diciembre</option>
-					</select>
-					<div class="col s4 m4 l4">
-						<input type="text" name="year" id="year" placeholder="Año">
-					</div>
-					<div class="col s6 m6 l6">
-						<label>Usuario</label>
-						<input type="text" name="user" id="user">
-					</div>
-					<div class="col s6 m6 l6">
-						<label>Correo</label>
-						<input type="text" name="correo" id="correo">
+						<label>E-mail</label>
+						<input  type="text" name="email" id="email">
 					</div>
 					<div class="col s6 m6 l6">
 						<label>Contraseña:</label>
-						<input type="password" name="pass" id="pass" size="30" >
+						<input type="password" name="password" id="password" size="30" >
 					</div>
 					<div class="col s6 m6 l6">
 						<label>Confirma contraseña:</label>
 						<input type="password" name="pass2" id="pass2" size="30" >
+					</div>
+					<div class="col s6">
+						<label>Telefono</label>
+						<input  type="number" name="telefono" id="telefono">
+					</div>
+					<div class="col s6">
+						<label>Status</label>
+						<input  type="number" name="status" id="status">
+					</div>
+					<div class="col s6">
+						<label>Privilegios</label>
+						<input  type="number" name="privilegios" id="privilegios">
 					</div>
 					<div class="center col s12 m12 l12">
 						<br>
