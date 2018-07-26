@@ -33,7 +33,7 @@
 						</a>
 					</div>
 				</div>
-				<form class="login100-form validate-form" method="POST" action="<?=base_url().'index.php/Login/log_in';?>">
+				<form class="login100-form validate-form" method="POST" action="<?=base_url().'index.php/Login_User/login';?>">
 					<span class="login100-form-title">Inicio de Sesión</span>
 					<div class="wrap-input100 validate-input" data-validate = "El correo es requerido: ejemplo@abc.com">
 						<input class="input100" type="text" name="email" placeholder="Correo electrónico">
