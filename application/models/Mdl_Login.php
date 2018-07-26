@@ -105,6 +105,14 @@ class Mdl_Login extends CI_Model
 		  }
 	}
 
+	public function buscarNombre($email){
+		$this->db->select('nombre_usuario');
+		$this->db->from('usuarios');
+		$this->db->where('email',$email);
+		$query=$this->db->get();
+		return $query->num_rows();
+	}
+
 	public function registro_admin(){
       $this->db->set('id_usuario',0)
                 ->set('nombre_usuario',$this->nombre)

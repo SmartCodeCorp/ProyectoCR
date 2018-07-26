@@ -19,12 +19,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	    $password = $this->input->post('password');
 
 	    $entrar = $this->Mdl_Login->loginAdm($email, $password);
-	    	if ($entrar == 0) {
+	    //$nombre = $this->Mdl_Login->buscarNombre($email);
+	    //echo $nombre;
+	    if ($entrar == 0) {
 	    		$this->index();
 	      	}else{
 	      		$this->session->set_userdata('email', $email); 
 	        	redirect('Administrador');
 	      }
+	    	
   	}
 
   	public function frmAddAdmin(){
