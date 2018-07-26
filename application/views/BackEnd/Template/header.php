@@ -104,7 +104,7 @@ if(!$this->session->has_userdata('email')){
                                 <i class="fa fa-phone-square"></i>Contactos</a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="<?=base_url();?>index.php/Categorias">
                                 <i class="fa fa-tags"></i>Categorias</a>
                         </li>
                         <li class="has-sub">
@@ -181,7 +181,7 @@ if(!$this->session->has_userdata('email')){
                                 <i class="fa fa-phone-square"></i>Contactos</a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="<?=base_url();?>index.php/Categorias">
                                 <i class="fa fa-tags"></i>Categorias</a>
                         </li>
                         <li class="#">
