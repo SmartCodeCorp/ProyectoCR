@@ -80,21 +80,17 @@
 						<label>Contraseña:</label>
 						<input type="password" name="password" id="password" size="30" >
 					</div>
-					<div class="col s6 m6 l6">
-						<label>Confirma contraseña:</label>
-						<input type="password" name="pass2" id="pass2" size="30" >
-					</div>
 					<div class="col s6">
 						<label>Telefono</label>
 						<input  type="number" name="telefono" id="telefono">
 					</div>
 					<div class="col s6">
-						<label>Status</label>
-						<input  type="number" name="status" id="status">
+
+						<input  type="hidden" name="status" id="status" value="1">
 					</div>
 					<div class="col s6">
-						<label>Privilegios</label>
-						<input  type="number" name="privilegios" id="privilegios">
+					
+						<input  type="hidden" name="privilegios" id="privilegios" value="3">
 					</div>
 					<div class="center col s12 m12 l12">
 						<br>
