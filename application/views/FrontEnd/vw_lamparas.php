@@ -1,8 +1,4 @@
 
-<link href="<?=base_url();?>/FrontEnd/header">
-
-
-
 <!-- start banner Area -->
             <section class="banner-area relative about-banner" id="home">
                 <div class="overlay overlay-bg"></div>
@@ -19,9 +15,6 @@
             </section>
             <!-- End banner Area -->
 
-
-
-
 			 <!-- ##### Featured Properties Area Start ##### -->
     <section class="featured-properties-area section-padding-100-50">
         <div class="container">
@@ -29,13 +22,24 @@
                 <div class="col-12">
                     <div class="section-heading wow fadeInUp">
                         <h2>"La ciencia de iluminar es un arte y el arte de iluminar es una ciencia".</h2>
-                        <p>-Carlos Laszlo</p>
                     </div>
                 </div>
             </div>
 
             <div class="row">
-
+                <?php 
+                    $agregado = $this->session->flashdata('agregado');
+                    if ($agregado) {?>
+                        <script>
+                            swal(
+                              'Producto agregado correctamente!',
+                              'Presione OK para continuar!',
+                              'success'
+                            )
+                        </script>
+                    <?php
+                    }
+                ?>
                 <!-- Single Featured Property -->
                 <?php foreach($productos as $producto):
                         if($producto->categorias_id_categoria >= 2){ 
@@ -48,6 +52,8 @@
                         </div>
 
                         <!-- Property Content -->
+                        <form action="<?=base_url();?>index.php/Producto/agregarLampara" method="POST">
+                        <?= form_hidden('id', $producto->id_producto); ?>
                         <div class="property-content">
                             <h3><?=$producto->nombre_producto; ?></h3>
                             <h4 class="location">STOCK: <?=$producto->unidades_stock; ?></h4>
@@ -58,9 +64,12 @@
                                 <h4>$<?=$producto->precio_unitario; ?></h4>
                             </div>
                             <div align="right">
-                                <a href="#" class="primary-btn text-uppercase">Añadir al carrito</a>
+                                <button type="submit" class="primary-btn text-uppercase">
+                                    Añadir al carrito
+                                </button>
                             </div>
                         </div>
+                        </form>
                     </div>
                 </div>
             <?php 

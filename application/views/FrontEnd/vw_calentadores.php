@@ -23,12 +23,24 @@
                 <div class="col-12">
                     <div class="section-heading wow fadeInUp">
                         <h2>"La ciencia de iluminar es un arte y el arte de iluminar es una ciencia".</h2>
-                        <p>-Carlos Laszlo</p>
                     </div>
                 </div>
             </div>
 
             <div class="row">
+                <?php 
+                    $agregado = $this->session->flashdata('agregado');
+                    if ($agregado) {?>
+                        <script>
+                            swal(
+                              'Producto agregado correctamente!',
+                              'Presione OK para continuar!',
+                              'success'
+                            )
+                        </script>
+                    <?php
+                    }
+                ?>
 
                 <!-- Single Featured Property -->
                 <?php foreach($productos as $producto):
@@ -42,7 +54,7 @@
                         </div>
 
                         <!-- Property Content -->
-                        <form action="<?=base_url();?>index.php/Producto/agregarProducto" method="POST">
+                        <form action="<?=base_url();?>index.php/Producto/agregarCalentador" method="POST">
                         <?= form_hidden('id', $producto->id_producto); ?>
                         <div class="property-content">
                             <h3><?=$producto->nombre_producto; ?></h3>
