@@ -60,7 +60,10 @@ CSS
           
         </div>
         <div class="col-lg-6 col-sm-6 col-8 header-top-right">
-				<a href="#" class="primar-btn text-uppercase">Mi Carrito</a>
+          <?php if($total_items=$this->cart->total_items()):?> 
+              <li class="primar-btn text-uppercase"><?=anchor('Producto/cart', 'Mi carrito = '.$total_items);?></li> 
+            <?php endif; ?>
+				<!--<a href="#" class="primar-btn text-uppercase">Mi Carrito</a>-->
   			</div>
   		</div>
 		</div>

@@ -42,6 +42,8 @@
                         </div>
 
                         <!-- Property Content -->
+                        <form action="<?=base_url();?>index.php/Producto/agregarProducto" method="POST">
+                        <?= form_hidden('id', $producto->id_producto); ?>
                         <div class="property-content">
                             <h3><?=$producto->nombre_producto; ?></h3>
                             <h4 class="location">STOCK: <?=$producto->unidades_stock; ?></h4>
@@ -52,9 +54,12 @@
                                 <h4>$<?=$producto->precio_unitario; ?></h4>
                             </div>
                             <div align="right">
-                                <a href="#" class="primary-btn text-uppercase">Añadir al carrito</a>
+                                <button type="submit" class="primary-btn text-uppercase">
+                                Añadir al carrito
+                                </button>
                             </div>
                         </div>
+                        </form>
                     </div>
                 </div>
             <?php 

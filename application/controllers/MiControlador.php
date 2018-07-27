@@ -15,7 +15,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       $data['preguntas'] = $this->Mdl_PregFrecuentes->listarPreguntas();
       $data['productos'] = $this->Mdl_Productos->listarProductos();
       switch ($option) {
-      case 1:
+        case 1:
               $config  = array(
                   'start_day' => 'monday',
                   'month_type' => 'long',
@@ -29,7 +29,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 $data['titulo']='Libreria Calendar';
                 $data['contenido']='Calendario';
               $this->load->view('FrontEnd/index', $config);
-          break;
+        break;
         case 2:$this->load->view('FrontEnd/vw_productos');
           break;
         case 3:$this->load->view('FrontEnd/vw_calentadores', $data);
