@@ -14,6 +14,21 @@
         </div>
     </div>
 </section>
+<?php 
+    $eliminado = $this->session->flashdata('productoEliminado');
+        if ($eliminado) {?>
+            <script>
+                swal({
+                position: 'top-end',
+                type: 'success',
+                title: 'Producto eliminado',
+                showConfirmButton: false,
+                timer: 1700
+                })
+            </script>
+        <?php
+            }
+        ?>
 <section class="our-mission-area section-gap">
     <div class="container">
         <div class="row d-flex justify-content-center">
@@ -42,20 +57,62 @@
                             <?php endif; ?>
                         </td>        
                         <td ><?php echo $this->cart->format_number($items['price']); ?></td>
-                        <td><?php echo form_input(array('name' => $i.'[qty]', 'value' => $items['qty'], 'maxlength' => '3', 'size' => '5')); ?>
-                            <p><?php echo form_submit("Producto/actualizarCarrito", "Actualizar" , "class='btn btn-warning'"); ?>
+                        <td><?php echo form_input(array('name' => $i.'[qty]', 'value' => $items['qty'], 'maxlength' => '3', 'size' => '5', 'type' => 'number')); ?>
+
+                            <a href="<?=base_url();?>index.php/Producto/actualizarCarrito">
+                                <button class="primary-btn text-uppercase">Actualizar</button>
+                            </a>
+                            <p><?php echo form_submit("Producto/actualizarCarrito", "Actualizar" , "class='primary-btn text-uppercase'"); ?>
                             </p>
                         </td>
                         <td style="text-align:right">$<?php echo $this->cart->format_number($items['subtotal']); ?></td>
+                        <td>
+                        <button class="primary-btn text-uppercase"><?= anchor('../index.php/Producto/eliminarProducto/' . $items['rowid'], 'Eliminar') ?>                           
+                        </button>
+                        </td>
                         <td id="eliminar"><?= anchor('../index.php/Producto/eliminarProducto/' . $items['rowid'], 'Eliminar') ?><span class="glyphicon glyphicon-trash"></span>
                         </td>
                     </tr>
                         <?php $i++; ?>
                         <?php endforeach; ?>
                     <tr>
-                        <td colspan="2" onclick="return confirm('¿Realmente desea eliminar este articulo?')"><?= anchor('../index.php/Producto/vaciarCarrito', 'Vaciar carrito')?><span class="glyphicon glyphicon-trash"></span>
+                        <button onclick="funcion();" type="submit" class="primary-btn text-uppercase" >Vaciar Carrito</button>
                         </td>
                         <script>
+                            function funcion(){
+                                const swalWithBootstrapButtons = swal.mixin({
+                                  confirmButtonClass: 'btn btn-success',
+                                  cancelButtonClass: 'btn btn-danger',
+                                  buttonsStyling: false,
+                                })
+
+                                swalWithBootstrapButtons({
+                                  title: 'Estas seguro de vaciar tu carrito?',
+                                  text: "Puedes cancelar dando click en CANCELAR!",
+                                  type: 'warning',
+                                  showCancelButton: true,
+                                  confirmButtonText: 'Si, Eliminar carrito!',
+                                  cancelButtonText: 'Cancelar!',
+                                  reverseButtons: true
+                                }).then((result) => {
+                                  if (result.value) {
+                                    swalWithBootstrapButtons(
+                                      'Eliminado!',
+                                      'Tu carrito se ha eliminado.',
+                                      'success',
+                                      location.href ="<?=base_url();?>index.php/Producto/vaciarCarrito"
+                                    )
+                                  } else if (           
+                                    result.dismiss === swal.DismissReason.cancel
+                                  ) {
+                                    swalWithBootstrapButtons(
+                                      'Cancelado',
+                                      'La accion se ha cancelado',
+                                      'error'
+                                    )
+                                  }
+                                })
+                            }
                                     
                         </script>
                         <td class="right"><strong>Total</strong></td>

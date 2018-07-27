@@ -32,11 +32,13 @@
                     $agregado = $this->session->flashdata('agregado');
                     if ($agregado) {?>
                         <script>
-                            swal(
-                              'Producto agregado correctamente!',
-                              'Presione OK para continuar!',
-                              'success'
-                            )
+                            swal({
+                              position: 'top-end',
+                              type: 'success',
+                              title: 'Producto agregado',
+                              showConfirmButton: false,
+                              timer: 1700
+                            })
                         </script>
                     <?php
                     }

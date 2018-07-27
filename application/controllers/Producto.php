@@ -58,7 +58,7 @@ class Producto extends CI_Controller
 		redirect('Producto/carrito');
 	}
 
-	public function eliminarProd($rowid){
+	public function eliminarProducto($rowid){
         $producto = array(
             'rowid' => $rowid,
             'qty' => 0
