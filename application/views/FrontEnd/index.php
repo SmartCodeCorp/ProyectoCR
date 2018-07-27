@@ -167,7 +167,7 @@
 					<h4>Calentador solar</h4>
 				</a>
 				<p>
-					Calentador solar sopray de 20 tubos.
+					Calentador solar sopray de 30 tubos.
 				</p>
 			</div>
 		</div>

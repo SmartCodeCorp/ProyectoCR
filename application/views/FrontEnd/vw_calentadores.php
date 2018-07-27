@@ -38,23 +38,22 @@
                     <div class="single-featured-property mb-50 wow fadeInUp" data-wow-delay="100ms">
                         <!-- Property Thumbnail -->
                         <div class="property-thumb">
-                            <img src="<?=base_url();?>/FrontEnd/Template/img/bg-img/default_calentador.jpg" alt="">
+                            <img class="imgHW" src="<?=base_url();?>assets/uploads/files/<?=$producto->imagen?>" alt="">
                         </div>
 
                         <!-- Property Content -->
                         <div class="property-content">
-                            <h5><?=$producto->nombre_producto; ?></h5>
-                            <p class="location"><img src="<?=base_url();?>/FrontEnd/Template/img/icons/location.png" alt="">STOCK: <?=$producto->unidades_stock; ?></p>
+                            <h3><?=$producto->nombre_producto; ?></h3>
+                            <h4 class="location">STOCK: <?=$producto->unidades_stock; ?></h4>
                             <p>
                                 <?=$producto->descripcion_producto; ?>
                             </p>
-
-                             <div class="list-price">
-                                <p>$<?=$producto->precio_unitario; ?></p>
+                            <div class="list-price">
+                                <h4>$<?=$producto->precio_unitario; ?></h4>
                             </div>
-                          <div align="right">
-                                    <a href="#" class="primary-btn text-uppercase">Añadir al carrito</a>
-                                    </div>
+                            <div align="right">
+                                <a href="#" class="primary-btn text-uppercase">Añadir al carrito</a>
+                            </div>
                         </div>
                     </div>
                 </div>
