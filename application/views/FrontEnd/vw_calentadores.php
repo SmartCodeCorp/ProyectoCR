@@ -32,13 +32,19 @@
 
                 <!-- Single Featured Property -->
                 <?php foreach($productos as $producto):
-                        if($producto->categorias_id_categoria == 1){ 
+                        if($producto->categorias_id_categoria == 1){
+
+
+
                     ?>
+                      <?php $urlimg = base_url().'assets/uploads/files/' ?>
+
+
                 <div class="col-12 col-md-6 col-xl-4">
                     <div class="single-featured-property mb-50 wow fadeInUp" data-wow-delay="100ms">
                         <!-- Property Thumbnail -->
                         <div class="property-thumb">
-                            <img src="<?=base_url();?>/FrontEnd/Template/img/bg-img/default_calentador.jpg" alt="">
+                            <img src="<?=$urlimg.$producto->imagen;?>" alt="">
                         </div>
 
                         <!-- Property Content -->
@@ -58,7 +64,7 @@
                         </div>
                     </div>
                 </div>
-            <?php 
+            <?php
             }
 
         endforeach;
