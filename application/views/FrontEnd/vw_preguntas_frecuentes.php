@@ -32,15 +32,15 @@
         <div class="row">
             <div class="col-md-6 accordion-left">
 
-                <!-- accordion 2 start-->   	
+                <!-- accordion 2 start-->
                 <dl class="accordion">
                     <dt>
-                        <a href="">SOLUCIONA TUS DUDAS</a>
+
                     </dt>
                     <?php foreach ($preguntas as $pregunta): ?>
                     	<?php if ($pregunta->status_pregunta==1): ?>
-                    		
-                    	
+
+
                     <dt>
                         <a href=""><?=$pregunta->pregunta; ?></a>
                     </dt>
@@ -68,7 +68,7 @@
 	<div class="container">
 		<div class="row col-md-12 col-lg-12 row">
 	<div class="comment-form">
-						<h3>Dejanos tu Pregunta ¿...?</h3>
+						<h3>Déjanos tu Pregunta...</h3>
 						<br>
 					<form method="post" action="<?=base_url().'index.php/Preguntas_Frecuentes/agregarDuda'?>">
 
@@ -107,6 +107,9 @@
 				</div>
 			</div>
 		</div>
+
+
+
 
 </section>
 <!-- End our-mission Area -->

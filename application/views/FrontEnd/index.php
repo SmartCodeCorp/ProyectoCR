@@ -1,4 +1,4 @@
-              
+
 <!-- Inicia Area banner -->
 <section class="banner-area relative" id="home">
 	<div class="overlay overlay-bg"></div>
@@ -134,43 +134,48 @@
 		<div class="row justify-content-center">
 			<div class="col-md-7 pb-60 header-text">
 				<h1>Productos recientes</h1>
+
 			</div>
 		</div>
 		<div class="row">
-			<div class="single-recent-blog col-lg-4 col-md-4">
-				<div class="thumb">
-					<img class="f-img img-fluid mx-auto" src="<?=base_url();?>/FrontEnd/Template/img/productos/calent_20.jpg" alt="">
-				</div>
-				<a href="#">
-					<h4>Calentador solar</h4>
-				</a>
-				<p>
-					Calentador solar sopray de 20 tubos.
-				</p>
-			</div>
-			<div class="single-recent-blog col-lg-4 col-md-4">
-				<div class="thumb">
-					<img class="f-img img-fluid mx-auto" src="<?=base_url();?>/FrontEnd/Template/img/productos/calentador_10.jpg" alt="">
-				</div>
-				<a href="#">
-					<h4>Calentador solar</h4>
-				</a>
-				<p>
-			  		Calentador solar sopray de 10 tubos.
-				</p>
-			</div>
-			<div class="single-recent-blog col-lg-4 col-md-4">
-				<div class="thumb">
-					<img class="f-img img-fluid mx-auto" src="<?=base_url();?>/FrontEnd/Template/img/productos/calentador_20.jpg" alt="">
-				</div>
-				<a href="#">
-					<h4>Calentador solar</h4>
-				</a>
-				<p>
-					Calentador solar sopray de 20 tubos.
-				</p>
-			</div>
+
+      <?php $urlimg = base_url().'assets/uploads/files/' ?>
+
+      <?php foreach ($newproducts as $new): ?>
+        <div class="single-recent-blog col-lg-4 col-md-4">
+
+          <div class="thumb">
+
+            <img class="f-img img-fluid mx-auto" src="<?=$urlimg.$new->imagen;?>" alt="">
+          </div>
+          <a href="#">
+            <h4>Nombre:&nbsp;<?=$new->nombre_producto;?></h4>
+          </a>
+          <a href="">
+            <h4>Descripción:&nbsp;<?=$new->descripcion_producto;?></h4>
+
+          </a>
+
+          <a href="">
+            <h4>$ &nbsp;<?=$new->precio_unitario;?></h4>
+
+          </a>
+
+          <div align="right">
+                    <a href="#" class="primary-btn text-uppercase">Añadir al carrito</a>
+                    </div>
+
+
+        </div>
+
+
+
+
+      <?php endforeach; ?>
+
+
+
 		</div>
 	</div>
 </section>
-<!-- Termina area de blog --> 
+<!-- Termina area de blog -->

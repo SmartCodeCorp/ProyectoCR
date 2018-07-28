@@ -37,7 +37,7 @@ CSS
 
 <script src="<?=base_url();?>js/jquery.min.js"></script>
 <script src="<?=base_url();?>sweetalert2/dist/sweetalert2.all.min.js"></script>
-<script src="https://unpkg.com/promise-polyfill"></script>	
+<script src="https://unpkg.com/promise-polyfill"></script>
 <script src="<?=base_url();?>sweetalert2/dist/sweetalert2.min.js"></script>
 <link rel="stylesheet" href="sweetalert2/dist/sweetalert2.min.css">
 
@@ -57,7 +57,7 @@ CSS
   				<a href="<?=base_url();?>index.php/Login"><span class="Icons lnr-user"></span> <span class="text"><span class="text">Iniciar Sesión</span></span></a>
   			</div>
         <div>
-          
+
         </div>
         <div class="col-lg-6 col-sm-6 col-8 header-top-right">
 				<a href="#" class="primar-btn text-uppercase">Mi Carrito</a>
@@ -89,7 +89,7 @@ CSS
               <li><a href="<?=base_url();?>index.php/MiControlador/index/6">Mantenimiento</a></li>
             </ul>
           </li>
-          <li><a href="<?=base_url();?>index.php/MiControlador/index/10">Registrate</a></li>
+          
           <li><a href="<?=base_url();?>index.php/MiControlador/index/7">Preguntas Frecuentes</a></li>
         </ul>
       </nav><!-- #nav-menu-container -->

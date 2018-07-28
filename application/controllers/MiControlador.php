@@ -14,6 +14,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       $this->load->view('FrontEnd/Template/header');
       $data['preguntas'] = $this->Mdl_PregFrecuentes->listarPreguntas();
       $data['productos'] = $this->Mdl_Productos->listarProductos();
+      $data['newproducts'] = $this->Mdl_Productos->NuevosProductos();
+
+
+
       switch ($option) {
       case 1:
               $config  = array(
@@ -28,8 +32,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 $this->load->library('calendar', $config);
                 $data['titulo']='Libreria Calendar';
                 $data['contenido']='Calendario';
-              $this->load->view('FrontEnd/index', $config);
+
+              $this->load->view('FrontEnd/index', $data);
           break;
+
+
         case 2:$this->load->view('FrontEnd/vw_productos');
           break;
         case 3:$this->load->view('FrontEnd/vw_calentadores', $data);
@@ -46,8 +53,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           break;
         case 9:$this->load->view('FrontEnd/vw_galeria');
           break;
-        case 10:$this->load->view('FrontEnd/vw_registrate');
-          break;
+
         case 11:$this->load->view('FrontEnd/vw_confirmacion');
           break;
 
