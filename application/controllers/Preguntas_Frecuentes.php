@@ -10,9 +10,15 @@ class Preguntas_Frecuentes extends CI_Controller
 	public function index(){
 		$crud = new grocery_CRUD();
 		$crud->set_table('preguntasfrecuentes');
+		$campos = array(
+			'status_pregunta' => 'Estatus'
+		);
+		$crud->required_fields('status_pregunta', 'Estatus');
+		$crud->display_as($campos);
+
 		$output = $crud->render();
 		$this->load->view('BackEnd/Template/header');
-		$this->load->view('BackEnd/vw_preguntasfrecuentes', $output);
+		$this->load->view('BackEnd/vw_preguntasfrecuentes', (array)$output);
 		$this->load->view('BackEnd/Template/footer');
 		
 	}

@@ -2,14 +2,9 @@
 if(!$this->session->has_userdata('email')){
     redirect('Login_Adm');
 }else{
-    //session_start();
     if (isset($_SESSION['email'])) {
-        //asignar a variable
         $email = $_SESSION['email'];
-        //asegurar que no tenga "", <, > o &
         $email = htmlspecialchars($email);
-        //usarla donde quieras
-        echo "<p>¡Hola $email!</p>";
     }
 }
 ?>
@@ -347,7 +342,7 @@ if(!$this->session->has_userdata('email')){
                                 <div class="account-wrap">
                                     <div class="account-item clearfix js-item-menu">
                                         <div class="image">
-                                            <img src="<?=base_url();?>BackEnd/images/icon/avatar-01.png"/>
+                                            <img src="<?=base_url();?>BackEnd/images/icon/avatar-001.png"/>
                                         </div>
                                         <div class="content">
                                             <a class="js-acc-btn" href="#"><?php echo "<p>$email</p>";?></a>
@@ -392,12 +387,14 @@ if(!$this->session->has_userdata('email')){
 
     <!-- Jquery JS-->
     <script src="<?=base_url();?>BackEnd/vendor/jquery-3.2.1.min.js"></script>
+
     <!-- Bootstrap JS-->
+
     <script src="<?=base_url();?>BackEnd/vendor/bootstrap-4.1/popper.min.js"></script>
     <script src="<?=base_url();?>BackEnd/vendor/bootstrap-4.1/bootstrap.min.js"></script>
-    <!-- Vendor JS       -->
-    <script src="<?=base_url();?>BackEnd/vendor/slick/slick.min.js">
-    </script>
+
+    <!-- Vendor JS -->
+    <script src="<?=base_url();?>BackEnd/vendor/slick/slick.min.js"></script>
     <script src="<?=base_url();?>BackEnd/vendor/wow/wow.min.js"></script>
     <script src="<?=base_url();?>BackEnd/vendor/animsition/animsition.min.js"></script>
     <script src="<?=base_url();?>BackEnd/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js">
