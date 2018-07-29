@@ -52,7 +52,7 @@ class Producto extends CI_Controller
 		redirect('../index.php/MiControlador/index/3', 'refresh');
 	}
 
-	public function actualizarCarrito(){
+	public function updateCart(){
 		$data = $this->input->post();
 		$this->cart->update($data);
 		redirect('Producto/carrito');

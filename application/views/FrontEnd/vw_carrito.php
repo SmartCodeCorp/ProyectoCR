@@ -58,19 +58,13 @@
                         </td>        
                         <td ><?php echo $this->cart->format_number($items['price']); ?></td>
                         <td><?php echo form_input(array('name' => $i.'[qty]', 'value' => $items['qty'], 'maxlength' => '3', 'size' => '5', 'type' => 'number')); ?>
-
-                            <a href="<?=base_url();?>index.php/Producto/actualizarCarrito">
-                                <button class="primary-btn text-uppercase">Actualizar</button>
-                            </a>
-                            <p><?php echo form_submit("Producto/actualizarCarrito", "Actualizar" , "class='primary-btn text-uppercase'"); ?>
+                            <p><?php echo form_submit("Producto/updateCart", "Actualizar" , "class='btn btn-success'"); ?>
                             </p>
                         </td>
                         <td style="text-align:right">$<?php echo $this->cart->format_number($items['subtotal']); ?></td>
                         <td>
                         <button class="primary-btn text-uppercase"><?= anchor('../index.php/Producto/eliminarProducto/' . $items['rowid'], 'Eliminar') ?>                           
                         </button>
-                        </td>
-                        <td id="eliminar"><?= anchor('../index.php/Producto/eliminarProducto/' . $items['rowid'], 'Eliminar') ?><span class="glyphicon glyphicon-trash"></span>
                         </td>
                     </tr>
                         <?php $i++; ?>
