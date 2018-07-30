@@ -67,12 +67,23 @@ CSS
 </div>
 <div class="container main-menu">
 	<div class="row align-items-center justify-content-between d-flex">
-      <div id="log">
-        <img width="50%" src="<?=base_url();?>FrontEnd/Template/img/logoR.png">
+
+		<div id="log" class="hidden-xs hidden-sm">
+			<img width="50%" style="margin-left: 15px"  src="<?=base_url();?>FrontEnd/Template/img/logoR.png">
+		</div>
+
+			<div id="log" class="hidden-lg hidden-md">
+				<img width="30%"  style="margin-left: 15px"  src="<?=base_url();?>FrontEnd/Template/img/logoR.png">
+			</div>
+
+
+
+      <div style="margin-left: -200px;">
+         <h1 class="text-casa hidden-xs hidden-sm hidden-md">Casa Rocha</h1>
       </div>
-      <div style="margin-left: -300px;">
-         <h1 class="text-casa hidden-md hidden-lg">Casa Rocha</h1>
-      </div>
+
+		
+
 
       <nav id="nav-menu-container">
         <ul class="nav-menu">
@@ -89,7 +100,7 @@ CSS
               <li><a href="<?=base_url();?>index.php/MiControlador/index/6">Mantenimiento</a></li>
             </ul>
           </li>
-          
+
           <li><a href="<?=base_url();?>index.php/MiControlador/index/7">Preguntas Frecuentes</a></li>
         </ul>
       </nav><!-- #nav-menu-container -->
