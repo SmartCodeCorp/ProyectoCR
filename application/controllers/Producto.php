@@ -56,7 +56,7 @@ class Producto extends CI_Controller
 	public function actualizarCarrito(){
 		$data = $this->input->post();
 		$this->cart->update($data);
-		redirect('carrito');
+		redirect('Producto/mostrarCarrito');
 	}
 
 	public function eliminarProducto($rowid){

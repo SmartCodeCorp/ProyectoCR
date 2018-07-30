@@ -65,14 +65,18 @@
                         </td>
                         <td style="text-align:right">$<?php echo $this->cart->format_number($items['subtotal']); ?></td>
                         <td>
-                        <button class="primary-btn text-uppercase"><?= anchor('../index.php/Producto/eliminarProducto/' . $items['rowid'], 'Eliminar') ?>                           
+                            <a href="<?=base_url().'index.php/Producto/eliminarProducto/'. $items['rowid'];?>">
+                            <img src="<?=base_url();?>/FrontEnd/Template/img/icons/trash.png" height="20%" width="20%">
+                            </a>                          
                         </button>
                         </td>
                     </tr>
                         <?php $i++; ?>
                         <?php endforeach; ?>
                     <tr>
-                        <button onclick="accion();"  class="primary-btn text-uppercase" >Vaciar Carrito</button>
+                        <a onclick="accion();" class="primary-btn text-uppercase">
+                            Vaciar Carrito
+                        </a>
                         <script>
                             function accion(){
                                 const swalWithBootstrapButtons = swal.mixin({
