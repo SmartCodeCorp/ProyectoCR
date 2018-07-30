@@ -28,5 +28,6 @@ class Productos extends CI_Controller
 		$this->load->view('BackEnd/vw_productos', (array)$output);
 		$this->load->view('BackEnd/Template/footer');
 	}
+
 }
 ?>

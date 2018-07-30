@@ -4,6 +4,7 @@ class Producto extends CI_Controller
 	function __construct(){
 		parent::__construct();
 		$this->load->Model('Mdl_Productos');
+		$this->load->library('cart');
 	}
 
 	public function agregarCalentador(){
@@ -52,10 +53,10 @@ class Producto extends CI_Controller
 		redirect('../index.php/MiControlador/index/3', 'refresh');
 	}
 
-	public function updateCart(){
+	public function actualizarCarrito(){
 		$data = $this->input->post();
 		$this->cart->update($data);
-		redirect('Producto/carrito');
+		redirect('carrito');
 	}
 
 	public function eliminarProducto($rowid){
@@ -66,6 +67,14 @@ class Producto extends CI_Controller
         $this->cart->update($producto);
         $this->session->set_flashdata('productoEliminado', 'El producto fue eliminado correctamente');
         redirect('../index.php/Producto/carrito', 'refresh');
+    }
+
+    public function mostrarCarrito(){
+    	$data['contenido'] = 'carrito';
+    	$data['title'] = 'Carrito de compras';
+    	$this->load->view('FrontEnd/Template/header');
+		$this->load->view('FrontEnd/vw_carrito', $data);
+		$this->load->view('FrontEnd/Template/footer');
     }
 }
 ?>

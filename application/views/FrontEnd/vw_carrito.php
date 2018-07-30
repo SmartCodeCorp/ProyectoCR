@@ -33,6 +33,7 @@
     <div class="container">
         <div class="row d-flex justify-content-center">
             <div class="menu-content pb-70 col-lg-8">
+                <?php echo form_open('Producto/actualizarCarrito'); ?>
                 <table class="table table-bordered">
                     <tr>
                         <th>Articulo</th>
@@ -58,8 +59,9 @@
                         </td>        
                         <td ><?php echo $this->cart->format_number($items['price']); ?></td>
                         <td><?php echo form_input(array('name' => $i.'[qty]', 'value' => $items['qty'], 'maxlength' => '3', 'size' => '5', 'type' => 'number')); ?>
-                            <p><?php echo form_submit("Producto/updateCart", "Actualizar" , "class='btn btn-success'"); ?>
-                            </p>
+                            <a href="<?=base_url();?>index.php/Producto/actualizarCarrito">
+                                <button class="primary-btn text-uppercase">Actualizar</button>
+                            </a>
                         </td>
                         <td style="text-align:right">$<?php echo $this->cart->format_number($items['subtotal']); ?></td>
                         <td>
@@ -70,10 +72,9 @@
                         <?php $i++; ?>
                         <?php endforeach; ?>
                     <tr>
-                        <button onclick="funcion();" type="submit" class="primary-btn text-uppercase" >Vaciar Carrito</button>
-                        </td>
+                        <button onclick="accion();"  class="primary-btn text-uppercase" >Vaciar Carrito</button>
                         <script>
-                            function funcion(){
+                            function accion(){
                                 const swalWithBootstrapButtons = swal.mixin({
                                   confirmButtonClass: 'btn btn-success',
                                   cancelButtonClass: 'btn btn-danger',
@@ -109,10 +110,19 @@
                             }
                                     
                         </script>
+
+                        </td>
+                        
                         <td class="right"><strong>Total</strong></td>
                         <td class="right" colspan="2">$<?php echo $this->cart->format_number($this->cart->total()); ?></td>
+                        <td class="right" colspan="2">
+                            <button type="submit" class="primary-btn text-uppercase" >Procesar compra</button>
+                        </td>
                     </tr>
                 </table>
+                <a href="<?=base_url();?>index.php/MiControlador/index/3">
+                    Seguir comprando
+                </a>
             </div>
         </div>
     </div>
