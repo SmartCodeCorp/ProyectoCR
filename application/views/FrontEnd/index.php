@@ -5,8 +5,9 @@
 		<div class="container">
 			<div class="row fullscreen d-flex align-items-center justify-content-center">
 				<div class="banner-content col-lg-8 col-md-12">
+						<p class="pt-10 pb-10 text-white">INVIERTE EN</p>
 					<h1>CALENTADORES SOLARES</h1>
-					<p class="pt-10 pb-10 text-white">UTILIZANDO ENERGIA SOLAR CUIDAMOS EL AMBIENTE.</p>
+					<p class="pt-10 pb-10 text-white">Y AHORRA DINERO MUCHOS AÑOS</p>
 					<a href="<?=base_url();?>index.php/MiControlador/index/2" class="primary-btn text-uppercase">PRODUCTOS</a>
 				</div>
 			</div>

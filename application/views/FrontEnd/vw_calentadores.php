@@ -22,8 +22,8 @@
             <div class="row">
                 <div class="col-12">
                     <div class="section-heading wow fadeInUp">
-                        <h2>"La ciencia de iluminar es un arte y el arte de iluminar es una ciencia".</h2>
-                        <p>-Carlos Laszlo</p>
+                        <h2>"AGUA SOLAR" Sin electricidad, sin gas, sin carbón y lo mejor SIN GASTO!!.</h2>
+                        <p>Agua caliente a todas horas y para todos los usos.</p>
                     </div>
                 </div>
             </div>

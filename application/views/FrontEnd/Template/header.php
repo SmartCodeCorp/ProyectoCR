@@ -78,11 +78,11 @@ CSS
 
 
 
-      <div style="margin-left: -200px;">
+      <div style="margin-left: -350px;">
          <h1 class="text-casa hidden-xs hidden-sm hidden-md">Casa Rocha</h1>
       </div>
 
-		
+
 
 
       <nav id="nav-menu-container">
