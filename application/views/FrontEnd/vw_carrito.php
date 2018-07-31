@@ -7,9 +7,9 @@
         <div class="row d-flex align-items-center justify-content-center">
             <div class="about-content col-lg-12">
                 <h1 class="text-white">
-                    Carrito de compras
+                    Mi Carrito
                 </h1>
-
+                <img src="<?=base_url();?>/FrontEnd/Template/img/shopping_cart.png" height="10%" width="10%">
             </div>
         </div>
     </div>
@@ -32,51 +32,9 @@
 <section class="our-mission-area section-gap">
     <div class="container">
         <div class="row d-flex justify-content-center">
-            <div class="menu-content pb-70 col-lg-8">
+            <div class="pb-70 col-lg-8">
                 <?php echo form_open('Producto/actualizarCarrito'); ?>
-                <table class="table table-bordered">
-                    <tr>
-                        <th>Articulo</th>
-                        <th>Precio</th>
-                        <th>Cantidad</th>
-                        <th>Sub-Total</th>
-                        <th>Eliminar</th>
-                    </tr>
-                    <?php $i = 1; ?>
-                    <?php foreach ($this->cart->contents() as $items): ?>
-                        <?php echo form_hidden($i.'[rowid]', $items['rowid']); ?>
-                    <tr>
-                        <td>
-                            <?php echo $items['name']; ?>
-                            <?php if ($this->cart->has_options($items['rowid']) == TRUE): ?>
-                                <p>
-                                    <?php foreach ($this->cart->product_options($items['rowid']) as 
-                                    $option_name => $option_value): ?>
-                                    <strong><?php echo $option_name; ?>:</strong> <?php echo $option_value; ?><br />
-                                    <?php endforeach; ?>
-                                </p>
-                            <?php endif; ?>
-                        </td>        
-                        <td ><?php echo $this->cart->format_number($items['price']); ?></td>
-                        <td><?php echo form_input(array('name' => $i.'[qty]', 'value' => $items['qty'], 'maxlength' => '3', 'size' => '5', 'type' => 'number')); ?>
-                            <a href="<?=base_url();?>index.php/Producto/actualizarCarrito">
-                                <button class="primary-btn text-uppercase">Actualizar</button>
-                            </a>
-                        </td>
-                        <td style="text-align:right">$<?php echo $this->cart->format_number($items['subtotal']); ?></td>
-                        <td>
-                            <a href="<?=base_url().'index.php/Producto/eliminarProducto/'. $items['rowid'];?>">
-                            <img src="<?=base_url();?>/FrontEnd/Template/img/icons/trash.png" height="20%" width="20%">
-                            </a>                          
-                        </button>
-                        </td>
-                    </tr>
-                        <?php $i++; ?>
-                        <?php endforeach; ?>
-                    <tr>
-                        <a onclick="accion();" class="primary-btn text-uppercase">
-                            Vaciar Carrito
-                        </a>
+                <a onclick="accion();" class="primary-btn text-uppercase text-white">Vaciar Carrito</a>
                         <script>
                             function accion(){
                                 const swalWithBootstrapButtons = swal.mixin({
@@ -84,7 +42,6 @@
                                   cancelButtonClass: 'btn btn-danger',
                                   buttonsStyling: false,
                                 })
-
                                 swalWithBootstrapButtons({
                                   title: 'Estas seguro de vaciar tu carrito?',
                                   text: "Puedes cancelar dando click en CANCELAR!",
@@ -111,19 +68,81 @@
                                     )
                                   }
                                 })
-                            }
-                                    
+                            }        
                         </script>
-
+                <div class="table-responsive">
+                <table class="table">
+                    <tr class="thead-dark">
+                        <th scope="col">Articulo</th>
+                        <th scope="col">Imagen</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col">Cantidad</th>
+                        <th scope="col">Sub-Total</th>
+                        <th scope="col">Eliminar</th>
+                    </tr>
+                    <?php $i = 1; ?>
+                    <?php foreach ($this->cart->contents() as $items): ?>
+                        <?php echo form_hidden($i.'[rowid]', $items['rowid']); ?>
+                    <tr>
+                        <td>
+                            <?php echo $items['name']; ?>
+                            <?php if ($this->cart->has_options($items['rowid']) == TRUE): ?>
+                                <p>
+                                    <?php foreach ($this->cart->product_options($items['rowid']) as 
+                                    $option_name => $option_value): ?>
+                                    <strong><?php echo $option_name; ?>:</strong> <?php echo $option_value; ?><br />
+                                    <?php endforeach; ?>
+                                </p>
+                            <?php endif; ?>
                         </td>
-                        
-                        <td class="right"><strong>Total</strong></td>
-                        <td class="right" colspan="2">$<?php echo $this->cart->format_number($this->cart->total()); ?></td>
+                        <td>
+                            <?php echo $items['img']; ?>
+                            <?php if ($this->cart->has_options($items['rowid']) == TRUE): ?>
+                                <p>
+                                    <?php foreach ($this->cart->product_options($items['rowid']) as 
+                                    $option_img => $option_value): ?>
+                                    <img class="imgHW" src="<?=base_url();?>assets/uploads/files/<?=$option_img;?>" alt="">                
+                                    <br />
+                                    <?php endforeach; ?>
+                                </p>
+                            <?php endif; ?>
+                        </td>         
+                        <td >
+                            <?php echo $this->cart->format_number($items['price']); ?>
+                        </td>
+                        <td>
+                            <?php echo form_input(array('name' => $i.'[qty]', 'value' => $items['qty'], 'maxlength' => '3', 'size' => '5', 'type' => 'number')); ?>
+                            <a href="<?=base_url();?>index.php/Producto/actualizarCarrito">
+                                <button class="primary-btn text-uppercase">Actualizar</button>
+                            </a>
+                        </td>
+                        <td style="text-align:right">
+                            $<?php echo $this->cart->format_number($items['subtotal']); ?>    
+                        </td>
+                        <td>
+                            <a href="<?=base_url().'index.php/Producto/eliminarProducto/'. $items['rowid'];?>">
+                            <img src="<?=base_url();?>FrontEnd/Template/img/icons/trash.png" width="40px" heigth="40px">
+                            </a>                          
+                        </td>
+                    </tr>
+                        <?php $i++; ?>
+                        <?php endforeach; ?>
+                    <tr>
+                        <td class="right">
+                            <strong>Total</strong>
+                        </td>
                         <td class="right" colspan="2">
-                            <button type="submit" class="primary-btn text-uppercase" >Procesar compra</button>
+                            $<?php echo $this->cart->format_number($this->cart->total()); ?>        
+                        </td>
+                        <td class="right" colspan="2">
+                            <a href="<?=base_url();?>index.php/Login_User/vistaLogin" class="primary-btn text-uppercase">
+                                Procesar compra
+                                <img src="<?=base_url();?>/FrontEnd/Template/img/shopping-cart-icon" height="10%" width="10%">
+                            </a>
                         </td>
                     </tr>
                 </table>
+                </div>
                 <a href="<?=base_url();?>index.php/MiControlador/index/3">
                     Seguir comprando
                 </a>

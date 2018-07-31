@@ -16,7 +16,8 @@ class Producto extends CI_Controller
 			'id' => $id,
             'qty' => $cantidad,
             'price' => $producto->precio_unitario,
-            'name' => $producto->nombre_producto);
+            'name' => $producto->nombre_producto,
+            'img' => $producto->imagen);
         $this->cart->insert($insert);
         $uri = $this->input->post('uri');        
         $this->session->set_flashdata('agregado', 'El producto fue agregado correctamente');
@@ -32,8 +33,8 @@ class Producto extends CI_Controller
 			'id' => $id,
             'qty' => $cantidad,
             'price' => $producto->precio_unitario,
-            'name' => $producto->nombre_producto
-        	);
+            'name' => $producto->nombre_producto,
+            'img' => $producto->imagen);
         $this->cart->insert($insert);
         $uri = $this->input->post('uri');        
         $this->session->set_flashdata('agregado', 'El producto fue agregado correctamente');
@@ -74,6 +75,12 @@ class Producto extends CI_Controller
     	$data['title'] = 'Carrito de compras';
     	$this->load->view('FrontEnd/Template/header');
 		$this->load->view('FrontEnd/vw_carrito', $data);
+		$this->load->view('FrontEnd/Template/footer');
+    }
+
+    public function vistaDireccion(){
+    	$this->load->view('FrontEnd/Template/header');
+		$this->load->view('FrontEnd/vw_direccion');
 		$this->load->view('FrontEnd/Template/footer');
     }
 }

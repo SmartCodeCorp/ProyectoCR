@@ -62,6 +62,7 @@ CSS
         <div class="col-lg-6 col-sm-6 col-8 header-top-right">
           <?php if($total_items=$this->cart->total_items()):?> 
               <li class="primar-btn text-uppercase"><?=anchor('Producto/carrito', 'Ver mi carrito '.$total_items);?></li> 
+              <img src="<?=base_url();?>/FrontEnd/Template/img/shopping-cart-icon" height="8%" width="8%">
             <?php endif;?>
   			</div>
   		</div>

@@ -87,7 +87,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
      $this->form_validation->set_rules('email', 'email' , 'trim|required');
      $this->form_validation->set_rules('password' , 'password' , 'trim|required');
     }
- 
+
   }
 
   ?>

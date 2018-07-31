@@ -30,6 +30,19 @@
           }
       }
 
+      public function loginCart(){
+        $email = $this->input->post('email');
+        $password = $this->input->post('password');
+
+        $entrar = $this->Mdl_LoginUser->loginUser($email, $password);
+          if($entrar == 0){
+            $this->vistaLogin();
+          }else{
+            $this->session->set_userdata('email', $email);
+            redirect('Producto/vistaDireccion');
+          }
+      }
+
       public function frmAddUser(){
         $this->load->view('FrontEnd/vw_registro');
       }
@@ -51,20 +64,19 @@
           $this->Mdl_LoginUser->registro_user();
           $this->session->set_flashdata('success_msg', 'Registro exitoso');
                 redirect('Login_User');
-
         }else{
           $this->session->set_flashdata('error_msg', 'Ya existe el correo que ingresaste');
                 redirect('Login_User/frmAddUser');
         }
 
+      }
 
-
-
+      public function vistaLogin(){
+        $this->session->set_flashdata('procesada', 'Se proceso la compra');
+        $this->load->view('FrontEnd/vw_login');
       }
 
 
     }
-
-
 
  ?>
