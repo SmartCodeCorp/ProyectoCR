@@ -12,13 +12,26 @@
 	<link rel="stylesheet" type="text/css" href="<?=base_url();?>FrontEnd/Login/css/materialize.css">
 	<!-- Carga asincronida media="none" onload="if(media!='all')media='all'"-->
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<script type="text/javascript" async src="<?=base_url();?>js/validacionessignup.js"></script>
-	<script type="text/javascript" async src="<?=base_url();?>js/jquery.js"></script>
+
+
 
 
 	<script type="text/javascript" async  src="<?=base_url();?>FrontEnd/Login/css/materialize.min.js"></script>
 	<script src="<?=base_url();?>sweetalert2/dist/sweetalert-dev.js"></script>
 	<link rel="stylesheet" type="text/css"  href="<?=base_url();?>FrontEnd/Login/css/animate.min.css">
+
+
+	<link href="<?=base_url();?>FrontEnd/ketchup/css/jquery.ketchup.css" rel="stylesheet" media="screen" type="text/css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="<?=base_url();?>FrontEnd/ketchup/css/jquery.ketchup.css" />
+
+	<script src="<?=base_url();?>FrontEnd/ketchup/js/jquery.js" type="text/javascript"></script>
+	<script src="<?=base_url();?>FrontEnd/ketchup/js/jquery.ketchup.js" type="text/javascript"></script>
+	<script src="<?=base_url();?>FrontEnd/ketchup/js/jquery.ketchup.validations.js" type="text/javascript"></script>
+	<script src="<?=base_url();?>FrontEnd/ketchup/js/jquery.ketchup.helpers.js" type="text/javascript"></script>
+	<script src="<?=base_url();?>FrontEnd/ketchup/js/scaffold.js" type="text/javascript"></script>
+
+	<script type="text/javascript" src="<?=base_url();?>FrontEnd/ketchup/js/jquery-1.4.4.min.js"></script>
+	<script type="text/javascript" src="<?=base_url();?>FrontEnd/ketchup/js/jquery.ketchup.all.min.js"></script>
 
 </head>
 <body>
@@ -43,61 +56,30 @@
 			</div>
 
 
-<?php
 
-							if (isset($_GET['error'])) {
-								echo '<center><h4 class="red-text">Datos no validos</h4></center>';
-							}
-							if (isset($_GET['comp'])) {
-								echo '<center><h4 class="red-text">Inicie sesión para continuar</h4></center>';
-								?>
-								<input type="hidden" name="ver" value="comp">
-								<?php
-							}
-
-                                                        if(isset($_GET['existe'])){
-                                                                echo'<center>ya hay una cuenta con ese correo</center>';
-                                                        }
-
-							?>
-
-							<?php
-			                  $error_msg=$this->session->flashdata('error_msg');
-			                  if($error_msg){?>
-			                    <script>
-			                    	swal({
-									  type: 'error',
-									  title: 'Oops...',
-									  text: 'Lo sentimos ese email ya esta registrado!',
-									  footer: '<a href>Why do I have this issue?</a>'
-									})
-			                    </script>
-			                  <?php
-			              		}
-			                   ?>
 
 			<!-- Registrar cuenta -->
 			<div class="col s0 m0 l3"></div>
 			<div class="col s12 m12 l6 "  id="signup ">
-				<form name="signup" method="post" action="<?=base_url();?>index.php/Login_User/registroUser" onsubmit="return validar();">
+				<form class="default-behavior" method="post" action="<?=base_url();?>index.php/Login_User/registroUser" >
 					<br><label><h4 align="center">Registra una cuenta nueva:</h4></label>
 					<br><label>Nombre(s)</label>
-					<input type="text" name="nombre" id="nombre">
+					<input type="text" name="nombre" data-validate="validate(required, username, minlength(3)"  id="nombre">
 					<div class="col s6">
 						<label>Apellidos</label>
-						<input type="text" name="apellidos" id="apellidos">
+						<input type="text" name="apellidos" data-validate="validate(required, minlength(3)" id="apellidos">
 					</div>
 					<div class="col s6">
 						<label>E-mail</label>
-						<input  type="text" name="email" id="email">
+						<input  type="email" name="email" data-validate="validate(required, email)" id="email">
 					</div>
 					<div class="col s6 m6 l6">
 						<label>Contraseña:</label>
-						<input type="password" name="password" id="password" size="30" >
+						<input type="password" name="password" data-validate="validate(required, minlength(4)" id="password">
 					</div>
 					<div class="col s6">
 						<label>Telefono</label>
-						<input  type="number" name="telefono" id="telefono">
+						<input  type="number" name="telefono" data-validate="validate(required, minlength(10)" id="telefono">
 					</div>
 					<div class="col s6">
 
@@ -110,7 +92,7 @@
 					<div class="center col s12 m12 l12">
 						<br>
 						<button class="btn waves-effect waves-light left" type="submit" name="enviar">Enviar
-							<i class="material-icons right">send</i>
+							<i class="material-icons right"></i>
 						</button>
 
 							<a type="button" class="btn waves-effect waves-light right" href="<?=base_url();?>index.php/MiControlador/index/1">Cancelar</a>
@@ -121,6 +103,10 @@
 
 
 				</form>
+				<script type="text/javascript">
+				$('.default-behavior').ketchup();
+				</script>
+
 
 				<p class="col s12 m12 l12 center"><h6 class="center">¿Ya tienes una cuenta? <a href="<?=base_url();?>index.php/MiControlador/iniciar_sesion">Iniciar sesión</a> </h6></p>
 			</div>

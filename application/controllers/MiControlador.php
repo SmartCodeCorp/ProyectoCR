@@ -54,7 +54,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         case 9:$this->load->view('FrontEnd/vw_galeria');
           break;
 
-        case 11:$this->load->view('FrontEnd/vw_confirmacion');
+        case 11:$this->load->view('FrontEnd/vw_login');
           break;
 
       }

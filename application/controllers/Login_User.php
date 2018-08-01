@@ -9,6 +9,7 @@
         parent::__construct();
         $this->load->Model('Mdl_LoginUser');
         $this->load->Model('Mdl_Usuarios');
+        $this->load->library('session');
 
       }
 
@@ -50,11 +51,11 @@
         if($email_check){
           $this->Mdl_LoginUser->registro_user();
           $this->session->set_flashdata('success_msg', 'Registro exitoso');
-                redirect('Login_User');
+                //redirect('Login_User');
 
         }else{
           $this->session->set_flashdata('error_msg', 'Ya existe el correo que ingresaste');
-                redirect('Login_User/frmAddUser');
+              redirect('Login_User/frmAddUser');
         }
 
 

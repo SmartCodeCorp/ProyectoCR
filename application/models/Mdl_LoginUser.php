@@ -12,8 +12,16 @@
     private $privilegios;
 
 
-    function __construct(){
-      parent::__construct();
+    function __construct($id_usuario=null, $nombre=null, $apellidos=null, $email=null, $password=null, $telefono=null, $status=null, $privilegios=null){
+      $this->id_usuario = $id_usuario;
+      $this->nombre = $nombre;
+      $this->apellidos = $apellidos;
+      $this->email = $email;
+      $this->password = $password;
+      $this->telefono = $telefono;
+      $this->status = $status;
+      $this->privilegios = $privilegios;
+
     }
 
     public function get_id_usuario(){
@@ -111,10 +119,59 @@ public function loginUser($email, $password){
                ->set('telefono',$this->telefono)
                ->set('status_usuario',$this->status)
                ->set('privilegios',$this->privilegios);
-      $this->db->insert('usuarios');
+      $ins=$this->db->insert('usuarios');
+      if ($ins==true) {
+
+      ?>
+      <script type="text/javascript" src="<?=base_url();?>FrontEnd/sweetalert2/dist/sweetalert2.min.js"></script>
+      <script type="text/javascript" src="<?=base_url();?>FrontEnd/sweetalert2/dist/jquery-1.11.1.min.js"></script>
+      <link rel="stylesheet" type="text/css" href="<?=base_url();?>FrontEnd/sweetalert2/dist/sweetalert2.css">
+
+      <script>
+
+      $(document).ready(function(){
+        swal({
+          title: 'Usuarios',
+          text: 'usuario registrado',
+          type: 'success'
+        }).then(function(){
+          window.location.href = '<?=base_url();?>index.php/MiControlador/iniciar_sesion';
+
+        });
+      });
+</script>
+
+<?php
+}else{
+?>
+<script>
+ $(document).ready(function(){
+             swal({
+                 title: 'Wow!',
+                 text: 'Message!',
+                 type: 'success'
+             }).then(function() {
+                 window.location.href = '<?=base_url();?>MiControlador/index.php/Login';
+             });
+         });
+ </script>
+ <?php
+}
+
     }
 
+    public function email_check($email){
+      $this->db->select('*');
+      $this->db->from('usuarios');
+      $this->db->where('email', $email);
+      $query=$this->db->get();
 
+        if($query->num_rows()>0){
+          return false;
+        }else{
+          return true;
+        }
+    }
   }
 
 
