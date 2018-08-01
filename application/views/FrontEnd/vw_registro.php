@@ -55,7 +55,20 @@
 				<hr width="50%">
 			</div>
 
-
+			<?php
+			          $error_msg=$this->session->flashdata('error_msg');
+			          if($error_msg){?>
+			            <script>
+			              swal({
+			      type: 'error',
+			      title: 'Oops...',
+			      text: 'Lo sentimos ese email ya esta registrado!',
+			      footer: '<a href>Why do I have this issue?</a>'
+			    })
+			            </script>
+			          <?php
+			          }
+			           ?>
 
 
 			<!-- Registrar cuenta -->
