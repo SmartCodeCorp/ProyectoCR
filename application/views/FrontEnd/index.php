@@ -44,30 +44,26 @@
 			</div>
 			<!--Seccion para los contactos-->
 			<div class="col-lg-6 col-md-6 appointment-right pt-60 pb-60">
-				<form class="form-wrap" action="<?=base_url().'index.php/Contacto/agregar';?>" method="POST">
-					<p><?php
-			                $success_msg= $this->session->flashdata('success_msg');
-			                  if($success_msg){?>
-			                    <script>
-			                    	swal({
-									position: 'top-end',
-									type: 'success',
-									title: 'Tu contacto se a guardado',
-									showConfirmButton: false,
-									timer: 2000
-									})
-			                    </script>
-			                  <?php
-			              		}
-			                   ?></p>
+				<form class="form-wrap default-behavior" action="<?=base_url().'index.php/Contacto/agregar';?>" method="POST">
+
 					<h3 class="pb-20 text-center mb-30">CONTACTO</h3>
-					<input type="text" class="form-control" name="nombre_contacto" placeholder="Nombre" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Nombre'" value="<?=set_value('Nombre') ;?>">
-					<input type="text" class="form-control" name="asunto" placeholder="Asunto " onfocus="this.placeholder = ''" onblur="this.placeholder = 'Asunto'" value="<?=set_value('Asunto') ;?>">
-					<input type="email" class="form-control" name="email_contacto" placeholder="Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Correo'" value="<?=set_value('Correo electronico') ;?>">
-					<textarea name="mensaje" class="" rows="5" placeholder="Mensaje" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Mensaje'" value="<?=set_value('Mensaje') ;?>"></textarea>
-					<?=validation_errors();?>
+					<input type="text" class="form-control" name="nombre_contacto" placeholder="Nombre" data-validate="validate(required, username, minlength(3), maxlength(50))" id="nombre">
+
+
+					<input type="text" class="form-control" name="asunto" placeholder="Asunto" data-validate="validate(required, maxlength(100))" id="asunto">
+
+					<input type="email" class="form-control" name="email_contacto" placeholder="Email" data-validate="validate(required,email)" id="email">
+
+
+					<textarea name="mensaje" class="" rows="5" placeholder="Mensaje" data-validate="validate(required, maxlength(300))"></textarea>
+
 					<button class="primary-btn text-uppercase">Enviar</button>
 				</form>
+
+				<script type="text/javascript">
+				$('.default-behavior').ketchup();
+				</script>
+
 			</div>
 		</div>
 	</div>

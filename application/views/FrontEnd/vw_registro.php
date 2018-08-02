@@ -77,10 +77,10 @@
 				<form class="default-behavior" method="post" action="<?=base_url();?>index.php/Login_User/registroUser" >
 					<br><label><h4 align="center">Registra una cuenta nueva:</h4></label>
 					<br><label>Nombre(s)</label>
-					<input type="text" name="nombre" data-validate="validate(required, username, minlength(3)"  id="nombre">
+					<input type="text" name="nombre" data-validate="validate(required, username, minlength(3), maxlength(50))"  id="nombre">
 					<div class="col s6">
 						<label>Apellidos</label>
-						<input type="text" name="apellidos" data-validate="validate(required, minlength(3)" id="apellidos">
+						<input type="text" name="apellidos" data-validate="validate(required, minlength(3), maxlength(50))" id="apellidos">
 					</div>
 					<div class="col s6">
 						<label>E-mail</label>
@@ -88,11 +88,11 @@
 					</div>
 					<div class="col s6 m6 l6">
 						<label>Contraseña:</label>
-						<input type="password" name="password" data-validate="validate(required, minlength(4)" id="password">
+						<input type="password" name="password" data-validate="validate(required, minlength(4), maxlength(30))" id="password">
 					</div>
 					<div class="col s6">
 						<label>Telefono</label>
-						<input  type="number" name="telefono" data-validate="validate(required, minlength(10)" id="telefono">
+						<input  type="number" name="telefono" data-validate="validate(required, minlength(10) maxlength(15))" id="telefono">
 					</div>
 					<div class="col s6">
 

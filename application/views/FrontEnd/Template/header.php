@@ -47,6 +47,19 @@ CSS
 <script type="text/javascript" src="<?=base_url();?>calendar/js/moment.min.js"></script>
 <script type="text/javascript" src="<?=base_url();?>calendar/js/fullcalendar.min.js"></script>
 
+<!--Plugin jQuery Ketchup-->
+<link href="<?=base_url();?>FrontEnd/ketchup/css/jquery.ketchup.css" rel="stylesheet" media="screen" type="text/css" />
+<link rel="stylesheet" type="text/css" media="screen" href="<?=base_url();?>FrontEnd/ketchup/css/jquery.ketchup.css" />
+
+<script src="<?=base_url();?>FrontEnd/ketchup/js/jquery.js" type="text/javascript"></script>
+<script src="<?=base_url();?>FrontEnd/ketchup/js/jquery.ketchup.js" type="text/javascript"></script>
+<script src="<?=base_url();?>FrontEnd/ketchup/js/jquery.ketchup.validations.js" type="text/javascript"></script>
+<script src="<?=base_url();?>FrontEnd/ketchup/js/jquery.ketchup.helpers.js" type="text/javascript"></script>
+<script src="<?=base_url();?>FrontEnd/ketchup/js/scaffold.js" type="text/javascript"></script>
+
+<script type="text/javascript" src="<?=base_url();?>FrontEnd/ketchup/js/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="<?=base_url();?>FrontEnd/ketchup/js/jquery.ketchup.all.min.js"></script>
+
 </head>
 <body>
 <header id="header">
