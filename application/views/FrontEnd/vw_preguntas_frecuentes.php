@@ -70,30 +70,15 @@
 	<div class="comment-form">
 						<h3>Déjanos tu Pregunta...</h3>
 						<br>
-					<form method="post" action="<?=base_url().'index.php/Preguntas_Frecuentes/agregarDuda'?>">
+					<form class="default-behavior" method="post" action="<?=base_url().'index.php/Preguntas_Frecuentes/agregarDuda'?>" >
 
-						<p>
-						<?php
-			                $success_msg= $this->session->flashdata('success_msg');
-			                  if($success_msg){?>
-			                    <script>
-			                    	swal({
-									position: 'top-end',
-									type: 'success',
-									title: 'Tu pregunta se ha guardado correctamente',
-									showConfirmButton: false,
-									timer: 1600
-									})
-			                    </script>
-			                  <?php
-			              		}
-			                   ?>
-					</p>
 
 						<div class="form-group form-inline ">
 
 						  <div class="form-group col-md-8  pregunta">
-						    <input type="text" class="form-control" id="pregunta" name="pregunta" placeholder="Pregunta" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Pregunta'" value="<?=set_value('Pregunta');?>">
+
+						    <input type="text" class="form-control" id="pregunta" name="pregunta" placeholder="Pregunta" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Pregunta'" data-validate="validate(required, maxlength(150), minlength(30))">
+
 						    <input type="hidden" name="status" value="0">
 						  </div>
 						</div>
@@ -102,8 +87,11 @@
 								<a href="#" class="primary-btn text-uppercase">Enviar Pregunta</a>
 							</button>
 						</div>
-						<?=validation_errors();?>
 					</form>
+					<script type="text/javascript">
+						$('.default-behavior').ketchup();
+					</script>
+
 				</div>
 			</div>
 		</div>
