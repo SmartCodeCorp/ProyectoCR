@@ -78,16 +78,25 @@
     }
 
 public function loginUser($email, $password){
+  $key = $this->db->select("AES_ENCRYPT('$password','email') as pass")
+        ->get();
+  $mykey = $key->result();
+
+  foreach ($mykey as $reg):
+    $pass2 = $reg->pass;
+  endforeach;
+
   $data = array(
     'email' => $email,
-    'password' => $password);
-
+    'password' => $password
+  );
   $this->db->where($data);
-  $usuario = $this->db->get('usuarios');
-  return $usuario->num_rows();
-
+  if ($query = $this->db->get('usuarios')) {
+    return $query->row_array();
+  }else{
+    return false;
+  }
 }
-
 
     public function buscarEmail($email){
       $this->db->select('*');
@@ -107,7 +116,8 @@ public function loginUser($email, $password){
                ->set('nombre_usuario',$this->nombre)
                ->set('apellidos',$this->apellidos)
                ->set('email',$this->email)
-               ->set('password',$this->password)
+               ->set('password', "AES_ENCRYPT('{$this->password}',
+                    '{$this->nombre}')", FALSE)
                ->set('telefono',$this->telefono)
                ->set('status_usuario',$this->status)
                ->set('privilegios',$this->privilegios);

@@ -1,3 +1,18 @@
+<?php
+$id_usuario = $this->session->has_userdata('id_usuario');
+$email = $this->session->has_userdata('email');
+$status = $this->session->has_userdata('status_usuario');
+$privilegios = $this->session->has_userdata('privilegios');
+
+if(!$this->session->has_userdata('email')){
+    
+}else{
+    if (isset($_SESSION['email'])) {
+        $email = $_SESSION['email'];
+        $email = htmlspecialchars($email);
+    }
+}
+?>
 
 <!DOCTYPE html>
 <html lang="zxx" class="no-js">
@@ -54,7 +69,11 @@ CSS
 		<div class="container">
   		<div class="row align-items-center">
   			<div class="col-lg-6 col-sm-6 col-4 header-top-left">
-  				<a href="<?=base_url();?>index.php/Login"><span class="Icons lnr-user"></span> <span class="text"><span class="text">Iniciar Sesión</span></span></a>
+          <?php if($this->session->has_userdata('email')){?>
+            <a href="<?=base_url();?>index.php/Login_User/salir"><span class="Icons lnr-user"></span> <span class="text"><span class="text">Salir</span></span></a>
+          <?php }else{ ?>
+  				<a href="<?=base_url();?>index.php/Login_User"><span class="Icons lnr-user"></span> <span class="text"><span class="text">Iniciar Sesión</span></span></a>
+          <?php }?>
   			</div>
         <div>
           

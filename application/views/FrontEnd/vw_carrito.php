@@ -96,25 +96,13 @@
                             <?php endif; ?>
                         </td>
                         <td>
-                            <?php echo $items['img']; ?>
-                            <?php if ($this->cart->has_options($items['rowid']) == TRUE): ?>
-                                <p>
-                                    <?php foreach ($this->cart->product_options($items['rowid']) as 
-                                    $option_img => $option_value): ?>
-                                    <img class="imgHW" src="<?=base_url();?>assets/uploads/files/<?=$option_img;?>" alt="">                
-                                    <br />
-                                    <?php endforeach; ?>
-                                </p>
-                            <?php endif; ?>
+                            <img class="imgCar" src="<?=base_url();?>assets/uploads/files/<?=$items['img'];?>" alt="">                                           
                         </td>         
                         <td >
                             <?php echo $this->cart->format_number($items['price']); ?>
                         </td>
                         <td>
-                            <?php echo form_input(array('name' => $i.'[qty]', 'value' => $items['qty'], 'maxlength' => '3', 'size' => '5', 'type' => 'number')); ?>
-                            <a href="<?=base_url();?>index.php/Producto/actualizarCarrito">
-                                <button class="primary-btn text-uppercase">Actualizar</button>
-                            </a>
+                            <?php echo form_input(array('name' => $i.'[qty]', 'value' => $items['qty'], 'min' => '1', 'max' => '3', 'size' => '5', 'type' => 'number')); ?>                            
                         </td>
                         <td style="text-align:right">
                             $<?php echo $this->cart->format_number($items['subtotal']); ?>    
@@ -134,9 +122,14 @@
                         <td class="right" colspan="2">
                             $<?php echo $this->cart->format_number($this->cart->total()); ?>        
                         </td>
+                        <td>
+                            <a href="<?=base_url();?>index.php/Producto/actualizarCarrito">
+                                <button class="primary-btn text-uppercase">Actualizar</button>
+                            </a>
+                        </td>
                         <td class="right" colspan="2">
                             <a href="<?=base_url();?>index.php/Login_User/vistaLogin" class="primary-btn text-uppercase">
-                                Procesar compra
+                                Procesar
                                 <img src="<?=base_url();?>/FrontEnd/Template/img/shopping-cart-icon" height="10%" width="10%">
                             </a>
                         </td>

@@ -1,13 +1,19 @@
 <?php
+$id_usuario = $this->session->has_userdata('id_usuario');
+$email = $this->session->has_userdata('email');
+$status = $this->session->has_userdata('status_usuario');
+$privilegios = $this->session->has_userdata('privilegios');
+
 if(!$this->session->has_userdata('email')){
     redirect('Login_Adm');
-}else{
+}else if(){
     if (isset($_SESSION['email'])) {
         $email = $_SESSION['email'];
         $email = htmlspecialchars($email);
     }
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 

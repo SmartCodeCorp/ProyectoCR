@@ -24,6 +24,7 @@
       $this->load->view('BackEnd/Template/footer');
 
     }
+
   }
 
  ?>
