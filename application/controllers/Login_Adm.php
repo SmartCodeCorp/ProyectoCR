@@ -67,5 +67,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         $this->session->sess_destroy();
         $this->index();
     }
+
+    public function prohibido(){
+        $this->session->sess_destroy();
+        $this->session->set_flashdata('prohibido', 'Error');
+        $this->index();
+    }
   }
 ?>
