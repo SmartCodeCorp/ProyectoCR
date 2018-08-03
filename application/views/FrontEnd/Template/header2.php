@@ -70,9 +70,8 @@ CSS
   		<div class="row align-items-center">
   			<div class="col-lg-6 col-sm-6 col-4 header-top-left">
           <?php if($this->session->has_userdata('email')){?>
-            <a href="<?=base_url();?>index.php/Login_User/salir"><span class="Icons lnr-user">
-            </span> <span class="text"><span class="text">Salir</span></span></a>
-            <span><?= $email; ?></span>
+            <a href="#"><span class="Icons lnr-user">
+            </span> <span class="text"><span class="text"><?= $email; ?></span></span></a>
           <?php }else{ ?>
   				<a href="<?=base_url();?>index.php/Login_User"><span class="Icons lnr-user"></span> <span class="text"><span class="text">Iniciar Sesión</span></span></a>
           <?php }?>
@@ -80,42 +79,12 @@ CSS
         <div class="col-lg-6 col-sm-6 col-8 header-top-right">
           <?php if($total_items=$this->cart->total_items()):?> 
               <li class="primar-btn text-uppercase">
-                <?=anchor('Producto/carrito', 'Ver mi carrito '.$total_items);?>
+                Mi Carrito <?=$total_items;?>    
                 </li> 
               <img src="<?=base_url();?>/FrontEnd/Template/img/shoppingcart.png" height="8%" width="8%">
             <?php endif;?>
   			</div>
   		</div>
 		</div>
-</div>
-<div class="container main-menu">
-	<div class="row align-items-center justify-content-between d-flex">
-      <div id="log">
-        <img width="50%" src="<?=base_url();?>FrontEnd/Template/img/logoR.png">
-      </div>
-      <div style="margin-left: -300px;">
-         <h1 class="text-casa hidden-md hidden-lg">Casa Rocha</h1>
-      </div>
-
-      <nav id="nav-menu-container">
-        <ul class="nav-menu">
-          <li><a href="<?=base_url();?>index.php/MiControlador/index/1">Inicio</a></li>
-          <li class="menu-has-children"><a href="">Productos</a>
-            <ul>
-              <li><a href="<?=base_url();?>index.php/MiControlador/index/3">Calentadores</a></li>
-              <li><a href="<?=base_url();?>index.php/MiControlador/index/4">Lamparas</a></li>
-            </ul>
-          </li>
-          <li class="menu-has-children"><a href="">Servicios</a>
-            <ul>
-              <li><a href="<?=base_url();?>index.php/MiControlador/index/5">Instalación</a></li>
-              <li><a href="<?=base_url();?>index.php/MiControlador/index/6">Mantenimiento</a></li>
-            </ul>
-          </li>
-          <li><a href="<?=base_url();?>index.php/MiControlador/index/10">Registrate</a></li>
-          <li><a href="<?=base_url();?>index.php/MiControlador/index/7">Preguntas Frecuentes</a></li>
-        </ul>
-      </nav><!-- #nav-menu-container -->
-	</div>
 </div>
 </header><!-- #header -->

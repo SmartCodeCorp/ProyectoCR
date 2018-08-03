@@ -9,7 +9,7 @@
                 <h1 class="text-white">
                     Mi Carrito
                 </h1>
-                <img src="<?=base_url();?>/FrontEnd/Template/img/shopping_cart.png" height="10%" width="10%">
+                <img src="<?=base_url();?>/FrontEnd/Template/img/shoppingcart.png" height="10%" width="10%">
             </div>
         </div>
     </div>
@@ -32,9 +32,9 @@
 <section class="our-mission-area section-gap">
     <div class="container">
         <div class="row d-flex justify-content-center">
-            <div class="pb-70 col-lg-8">
+            <div class="col-lg-8">
                 <?php echo form_open('Producto/actualizarCarrito'); ?>
-                <a onclick="accion();" class="primary-btn text-uppercase text-white">Vaciar Carrito</a>
+                <a onclick="accion();" class="primary-btn text-uppercase text-white">Vaciar Carrito</a><br>
                         <script>
                             function accion(){
                                 const swalWithBootstrapButtons = swal.mixin({
@@ -70,8 +70,8 @@
                                 })
                             }        
                         </script>
-                <div class="table-responsive">
-                <table class="table">
+                <div class="table-responsive textCenter">
+                <table class="table table-sm">
                     <tr class="thead-dark">
                         <th scope="col">Articulo</th>
                         <th scope="col">Imagen</th>
@@ -96,7 +96,7 @@
                             <?php endif; ?>
                         </td>
                         <td>
-                            <img class="imgCar" src="<?=base_url();?>assets/uploads/files/<?=$items['img'];?>" alt="">                                           
+                            <img class="imgCart" src="<?=base_url();?>assets/uploads/files/<?=$items['img'];?>" alt="">                                           
                         </td>         
                         <td >
                             <?php echo $this->cart->format_number($items['price']); ?>
@@ -109,7 +109,7 @@
                         </td>
                         <td>
                             <a href="<?=base_url().'index.php/Producto/eliminarProducto/'. $items['rowid'];?>">
-                            <img src="<?=base_url();?>FrontEnd/Template/img/icons/trash.png" width="40px" heigth="40px">
+                            <img src="<?=base_url();?>FrontEnd/Template/img/icons/trash-icon.png" width="40px" heigth="40px">
                             </a>                          
                         </td>
                     </tr>

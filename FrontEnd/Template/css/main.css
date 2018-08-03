@@ -2409,8 +2409,12 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 .imgCart{
-  height: 20%;
-  width: 20%;
+  height: 10%;
+  width: 60%;
+}
+
+.textCenter{
+  text-align: center;
 }
 
 .primary-btn:hover {

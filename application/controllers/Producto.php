@@ -79,7 +79,7 @@ class Producto extends CI_Controller
     }
 
     public function vistaDireccion(){
-    	$this->load->view('FrontEnd/Template/header');
+    	$this->load->view('FrontEnd/Template/header2');
 		$this->load->view('FrontEnd/vw_direccion');
 		$this->load->view('FrontEnd/Template/footer');
     }

@@ -5,6 +5,8 @@ class Direcciones extends CI_Controller
 		parent::__construct();
 		$this->load->library('grocery_CRUD');
 		$this->load->Model('Mdl_Direcciones');
+		$this->load->Model('Mdl_MetodoPago');
+		$this->load->Model('Mdl_MetodoEnvio');
 	}
 
 	public function index(){
@@ -31,14 +33,15 @@ class Direcciones extends CI_Controller
 
 		$this->form_validation->set_rules('calle', 'Calle' , 'trim|required|min_length[1]');
 		$this->form_validation->set_rules('numeroExt', 'NumeroExterior' , 'trim|required');
-		$this->form_validation->set_rules('codigoPostal', 'CodigoPostal' , 'trim|required|min_length[1]');
+		$this->form_validation->set_rules('codigoPostal', 'CodigoPostal' , 'trim|required|min_length[1]|max_length[5]');
 		$this->form_validation->set_rules('colonia', 'Colonia' , 'trim|required|min_length[1]');
 		$this->form_validation->set_rules('ciudad', 'Ciudad' , 'trim|required|min_length[1]');
 		$this->form_validation->set_rules('estado', 'Estado' , 'trim|required|min_length[1]');
-		$this->form_validation->set_rules('referencia', 'Referencia' , 'trim|required|min_length[3]');
+		$this->form_validation->set_rules('referencia', 'Referencia' , 'trim|required|min_length[1]');
 
 		$this->form_validation->set_message('required', 'El campo %s es obligatorio');
-	    $this->form_validation->set_message('min_length', 'El campo %s debe tener más de 3 caracteres');
+	    $this->form_validation->set_message('min_length', 'El campo %s debe tener más de 1 caracteres');
+	    $this->form_validation->set_message('min_length', 'El campo %s debe tener menos de 5 caracteres');
 
 	    if ($this->form_validation->run() == true) {
 	    	
@@ -52,6 +55,22 @@ class Direcciones extends CI_Controller
 	    }
 	}
 
+	public function buscarDireccion(){
+		$codigoPostal = $this->input->post('codigoPostal');
+		$this->form_validation->set_rules('codigoPostal', 'CodigoPostal' , 'trim|required|min_length[1]|max_length[5]');
+		$this->form_validation->set_message('required', 'El campo %s es obligatorio');
+	    $this->form_validation->set_message('min_length', 'El campo %s debe tener más de 1 caracteres');
+	    $this->form_validation->set_message('min_length', 'El campo %s debe tener menos de 5 caracteres');
+
+	    if ($this->form_validation->run() == true) {
+	    	
+	    	
+	    	
+	    }else{
+	    	
+	    }
+	}
+
 	public function vistaDireccion(){
     	$this->load->view('FrontEnd/Template/header');
 		$this->load->view('FrontEnd/vw_direccion');
@@ -60,7 +79,9 @@ class Direcciones extends CI_Controller
 
     public function vistaPago($last_id){
 	    $data['direccion'] = $this->Mdl_Direcciones->buscarDireccion($last_id);
-    	$this->load->view('FrontEnd/Template/header');
+	    $data['pagos'] = $this->Mdl_MetodoPago->listarMetodoPago();
+	    $data['envios'] = $this->Mdl_MetodoEnvio->listarMetodoEnvio();
+    	$this->load->view('FrontEnd/Template/header2');
 		$this->load->view('FrontEnd/vw_pago', $data);
 		$this->load->view('FrontEnd/Template/footer');
     }
