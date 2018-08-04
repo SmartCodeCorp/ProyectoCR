@@ -62,7 +62,7 @@ $id_usuario = $this->session->userdata('id_usuario');;
                 </table>
             </div>
             </div>
-            <div class="col-md-8">
+            <div class="col-md-4">
                 <form class="form-wrap" action="<?=base_url().'index.php/Direcciones/agregarDireccion';?>" method="POST">
                     <h5 class="pb-20 text-center mb-30">DIRECCIÓN DE ENVÍO</h5>
                     <?=validation_errors();?>
@@ -80,6 +80,8 @@ $id_usuario = $this->session->userdata('id_usuario');;
                     <button class="primary-btn text-uppercase">Guardar dirección</button>
                 </form>
             </div>
+            <div class="col-md-4">
+                <h5 class="pb-20 text-center mb-30">METODO DE PAGO</h5>
             <!--<div class="col-md-2">
                 <form method="POST" action="<?=base_url().'index.php/Direcciones/buscarDireccion';?>">
                     <label>Buscar mi direccion con mi CP</label>
@@ -88,6 +90,7 @@ $id_usuario = $this->session->userdata('id_usuario');;
                     <button class="primary-btn text-uppercase">Buscar</button>
                 </form>
             </div>-->
+            </div>
         </div>
     </div>
 </section>

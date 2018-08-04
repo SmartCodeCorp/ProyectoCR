@@ -49,7 +49,7 @@ class Direcciones extends CI_Controller
 	    	$this->Mdl_Direcciones->agregarDireccionUser($last_id, $idUsuario);
 	    	//echo "Ultimo id: " . $last_id;
 	    	$this->session->set_flashdata('direccionAgregada', 'La direccion fue agregada con exito');
-	    	redirect('Direcciones/vistaPago/'.$last_id);
+	    	redirect('Metodos_Pago/vistaPago/'.$last_id);
 	    }else{
 	    	$this->vistaDireccion();
 	    }
@@ -74,15 +74,6 @@ class Direcciones extends CI_Controller
 	public function vistaDireccion(){
     	$this->load->view('FrontEnd/Template/header');
 		$this->load->view('FrontEnd/vw_direccion');
-		$this->load->view('FrontEnd/Template/footer');
-    }
-
-    public function vistaPago($last_id){
-	    $data['direccion'] = $this->Mdl_Direcciones->buscarDireccion($last_id);
-	    $data['pagos'] = $this->Mdl_MetodoPago->listarMetodoPago();
-	    $data['envios'] = $this->Mdl_MetodoEnvio->listarMetodoEnvio();
-    	$this->load->view('FrontEnd/Template/header2');
-		$this->load->view('FrontEnd/vw_pago', $data);
 		$this->load->view('FrontEnd/Template/footer');
     }
 }

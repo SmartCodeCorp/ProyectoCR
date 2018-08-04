@@ -69,7 +69,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         $this->load->view('FrontEnd/vw_registro');
     }
 
-
+    public function compraTerminada(){
+      $this->cart->destroy();
+      redirect('../index.php/MiControlador/index/1', 'refresh');
+  } 
 
   }
 
