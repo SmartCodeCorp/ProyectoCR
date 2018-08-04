@@ -104,6 +104,9 @@ $id_usuario = $this->session->userdata('id_usuario');;
                             }elseif ($met->id_metodo == 2) {?>
                                 <img src="<?=base_url();?>FrontEnd/Template/img/PayPal-logo.png">
                             <?php
+                            }elseif ($met->id_metodo == 1) {?>
+                                <img src="<?=base_url();?>FrontEnd/Template/img/depositoicono.png">
+                            <?php
                             } 
                         ?>
                     <?php endforeach; ?>
