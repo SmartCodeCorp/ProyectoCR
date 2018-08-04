@@ -34,7 +34,7 @@
         <div class="row d-flex justify-content-center">
             <div class="col-lg-8">
                 <?php echo form_open('Producto/actualizarCarrito'); ?>
-                <a onclick="accion();" class="primary-btn text-uppercase text-white">Vaciar Carrito</a><br>
+                <a onclick="accion();" class="primary-btn text-uppercase text-white">Vaciar Carrito</a><br><br>
                         <script>
                             function accion(){
                                 const swalWithBootstrapButtons = swal.mixin({
@@ -73,7 +73,7 @@
                 <div class="table-responsive textCenter">
                 <table class="table table-sm">
                     <tr class="thead-dark">
-                        <th scope="col">Articulo</th>
+                        <th scope="col">Artículo</th>
                         <th scope="col">Imagen</th>
                         <th scope="col">Precio</th>
                         <th scope="col">Cantidad</th>

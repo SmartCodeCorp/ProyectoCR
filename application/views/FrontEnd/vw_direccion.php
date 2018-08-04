@@ -15,7 +15,7 @@ $id_usuario = $this->session->userdata('id_usuario');;
                 <div class="table-responsive text">
                 <table class="table table-sm">
                     <tr class="thead-dark">
-                        <th scope="col">Articulo</th>
+                        <th scope="col">Artículo</th>
                         <th scope="col">Imagen</th>
                         <th scope="col">Precio</th>
                         <th scope="col">Cantidad</th>
@@ -29,7 +29,7 @@ $id_usuario = $this->session->userdata('id_usuario');;
                             <?php echo $items['name']; ?>
                             <?php if ($this->cart->has_options($items['rowid']) == TRUE): ?>
                                 <p>
-                                    <?php foreach ($this->cart->product_options($items['rowid']) as 
+                                    <?php foreach ($this->cart->product_options($items['rowid']) as
                                     $option_name => $option_value): ?>
                                     <strong><?php echo $option_name; ?>:</strong> <?php echo $option_value; ?><br />
                                     <?php endforeach; ?>
@@ -38,7 +38,7 @@ $id_usuario = $this->session->userdata('id_usuario');;
                         </td>
                         <td>
                             <img class="imgCar" src="<?=base_url();?>assets/uploads/files/<?=$items['img'];?>" alt="">
-                        </td>         
+                        </td>
                         <td >
                             <?php echo $this->cart->format_number($items['price']); ?>
                         </td>
@@ -46,7 +46,7 @@ $id_usuario = $this->session->userdata('id_usuario');;
                             <?php echo $items['qty'];?>
                         </td>
                         <td style="text-align:right">
-                            $<?php echo $this->cart->format_number($items['subtotal']); ?>    
+                            $<?php echo $this->cart->format_number($items['subtotal']); ?>
                         </td>
                     </tr>
                         <?php $i++; ?>
@@ -56,7 +56,7 @@ $id_usuario = $this->session->userdata('id_usuario');;
                             <strong>Total</strong>
                         </td>
                         <td class="right" colspan="2">
-                            $<?php echo $this->cart->format_number($this->cart->total()); ?>        
+                            $<?php echo $this->cart->format_number($this->cart->total()); ?>
                         </td>
                     </tr>
                 </table>
@@ -81,7 +81,7 @@ $id_usuario = $this->session->userdata('id_usuario');;
                 </form>
             </div>
             <div class="col-md-4">
-                <h5 class="pb-20 text-center mb-30">METODO DE PAGO</h5>
+                <h5 class="pb-20 text-center mb-30">MÉTODO DE PAGO</h5>
             <!--<div class="col-md-2">
                 <form method="POST" action="<?=base_url().'index.php/Direcciones/buscarDireccion';?>">
                     <label>Buscar mi direccion con mi CP</label>
