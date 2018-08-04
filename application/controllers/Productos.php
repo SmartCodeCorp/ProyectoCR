@@ -14,10 +14,10 @@ class Productos extends CI_Controller
 			'clave_producto' => 'Clave',
 			'imagen' => 'Imagen',
 			'nombre_producto' => 'Nombre',
-			'descripcion_producto' => 'Descripcion',
+			'descripcion_producto' => 'Descripción',
 			'precio_unitario' => 'Precio Unitario',
 			'unidades_stock' => 'Stock',
-			'categorias_id_categoria' => 'Categoria'
+			'categorias_id_categoria' => 'Categoría'
 		);
 		$crud->required_fields('clave_producto', 'imagen', 'nombre_producto', 'descripcion_producto', 'precio_unitario', 'unidades_stock', 'categorias_id_categoria');
 		$crud->display_as($campos);

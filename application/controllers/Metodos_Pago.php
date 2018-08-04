@@ -13,7 +13,7 @@
       $crud = new grocery_CRUD();
       $crud->set_table('metodospago');
       $campos = array(
-        'nombre_metodo' => 'Metodo',
+        'nombre_metodo' => 'Método',
         'descripcion_metodo' => 'Descripción',
         'status_metodo' => 'Estatus'
       );

@@ -13,8 +13,8 @@ class Metodos_Envio extends CI_Controller
     $crud->set_table('metodosenvio');
     $campos = array(
         'nombre_paqueteria' => 'Paqueteria',
-        'numero_contacto' => 'Numero de Contacto',
-        'home_page' => 'Pagina oficial'
+        'numero_contacto' => 'Número de Contacto',
+        'home_page' => 'Página oficial'
       );
     $crud->required_fields('nombre_paqueteria', 'numero_contacto', 'home_page');
     $crud->display_as($campos);

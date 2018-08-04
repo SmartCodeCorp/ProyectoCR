@@ -10,16 +10,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   }
 
   public function index(){
-    
+
       $crud = new grocery_CRUD();
       $crud->set_table('usuarios');
       $crud->where('privilegios',2);
       $campos = array(
-        'nombre_usuario' => 'Nomnbres(s)',
+        'nombre_usuario' => 'Nombres(s)',
         'apellidos' => 'Apellido(s)',
         'email' => 'Correo electrónico',
         'password' => 'Contraseña',
-        'telefono' => 'Telefono',
+        'telefono' => 'Teléfono',
         'status_usuario' => 'Estatus',
         'privilegios' => 'Privilegios'
       );
