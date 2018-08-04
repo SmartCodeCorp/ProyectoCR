@@ -91,7 +91,7 @@
 					</div>
 					<div class="col s6">
 						<label>Telefono</label>
-						<input  type="number" name="telefono" data-validate="validate(required, minlength(10) maxlength(15))" id="telefono">
+						<input  type="number" name="telefono" data-validate="validate(required, minlength(11)" id="telefono">
 					</div>
 					<div class="col s6">
 

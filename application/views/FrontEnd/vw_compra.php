@@ -9,7 +9,7 @@ $id_usuario = $this->session->userdata('id_usuario');;
 <section class="our-mission-area section-gap">
     <div class="container">
         <div class="row d-flex justify-content-center">
-        	<?php 
+        	<?php
                 $pagoTarjeta = $this->session->flashdata('pagoTarjeta');
                     if ($pagoTarjeta) {?>
                         <script>
@@ -29,7 +29,7 @@ $id_usuario = $this->session->userdata('id_usuario');;
                 <div class="table-responsive textCenter">
                 <table class="table table-sm">
                     <tr class="thead-dark">
-                        <th scope="col">Articulo</th>
+                        <th scope="col">Artículo</th>
                         <th scope="col">Imagen</th>
                         <th scope="col">Precio</th>
                         <th scope="col">Cantidad</th>
@@ -43,7 +43,7 @@ $id_usuario = $this->session->userdata('id_usuario');;
                             <?php echo $items['name']; ?>
                             <?php if ($this->cart->has_options($items['rowid']) == TRUE): ?>
                                 <p>
-                                    <?php foreach ($this->cart->product_options($items['rowid']) as 
+                                    <?php foreach ($this->cart->product_options($items['rowid']) as
                                     $option_name => $option_value): ?>
                                     <strong><?php echo $option_name; ?>:</strong> <?php echo $option_value; ?><br />
                                     <?php endforeach; ?>
@@ -52,7 +52,7 @@ $id_usuario = $this->session->userdata('id_usuario');;
                         </td>
                         <td>
                             <img class="imgCar" src="<?=base_url();?>assets/uploads/files/<?=$items['img'];?>" alt="">
-                        </td>         
+                        </td>
                         <td >
                             <?php echo $this->cart->format_number($items['price']); ?>
                         </td>
@@ -60,7 +60,7 @@ $id_usuario = $this->session->userdata('id_usuario');;
                             <?php echo $items['qty'];?>
                         </td>
                         <td style="text-align:right">
-                            $<?php echo $this->cart->format_number($items['subtotal']); ?>    
+                            $<?php echo $this->cart->format_number($items['subtotal']); ?>
                         </td>
                     </tr>
                         <?php $i++; ?>
@@ -70,7 +70,7 @@ $id_usuario = $this->session->userdata('id_usuario');;
                             <strong>Total</strong>
                         </td>
                         <td class="right" colspan="2">
-                            $<?php echo $this->cart->format_number($this->cart->total()); ?>        
+                            $<?php echo $this->cart->format_number($this->cart->total()); ?>
                         </td>
                     </tr>
                 </table>
@@ -107,7 +107,7 @@ $id_usuario = $this->session->userdata('id_usuario');;
                             }elseif ($met->id_metodo == 1) {?>
                                 <img src="<?=base_url();?>FrontEnd/Template/img/depositoicono.png">
                             <?php
-                            } 
+                            }
                         ?>
                     <?php endforeach; ?>
                     <button class="primary-btn text-uppercase">GENERAR TICKET</button>
@@ -123,7 +123,7 @@ $id_usuario = $this->session->userdata('id_usuario');;
                         <?php echo form_hidden($i.'[rowid]', $items['rowid']); ?>
                     <tr>
                         <td style="text-align:right">
-                            $<?php echo $this->cart->format_number($items['subtotal']); ?>    
+                            $<?php echo $this->cart->format_number($items['subtotal']); ?>
                         </td>
                     </tr>
                         <?php $i++; ?>
@@ -134,10 +134,10 @@ $id_usuario = $this->session->userdata('id_usuario');;
                             $<?php echo $this->cart->format_number($this->cart->total()); ?>
                             <br>
                             <strong>Total a pagar: </strong>
-                            $<?php echo $this->cart->format_number($this->cart->total()); ?>           
+                            $<?php echo $this->cart->format_number($this->cart->total()); ?>
                         </td>
                     </tr>
-                </table>  
+                </table>
                 <button class="primary-btn text-uppercase" onclick="finalizar();">FINALIZAR COMPRA</button>
                 <script>
                     function finalizar(){
