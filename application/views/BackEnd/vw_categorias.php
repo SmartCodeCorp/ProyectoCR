@@ -18,6 +18,8 @@
 	<?php foreach ($js_files as $file):	?>
 	<script type="text/javascript" src="<?=$file?>"></script>
 	<?php endforeach; ?>
+
+	<a href="<?=base_url();?>index.php/Pdf_Categorias/vw_PdfCat">Generar PDF</a>
 </body>
 
 </html>
