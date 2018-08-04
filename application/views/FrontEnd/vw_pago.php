@@ -109,7 +109,7 @@ $id_usuario = $this->session->userdata('id_usuario');;
                         <label>Se te enviará un correo electrónico con el número de cuenta y la referencia de pago en el cual deberás realizar tu deposito bancario.
                         </label>
                         <form method="POST" action="<?=base_url().'index.php/Metodos_Pago/deposito';?>">
-                            <input type="hidden" name="deposito" value="3">
+                            <input type="hidden" name="deposito" value="1">
                             <input type="hidden" name="direccion" value="<?=$dir->id_direccion;?>">
                             <input type="hidden" name="idUsuario" value="<?=$id_usuario ;?>">
                             <button class="primary-btn form-control" type="submit">Guardar y continuar
