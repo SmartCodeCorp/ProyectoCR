@@ -45,7 +45,8 @@
 					</span>
 					<p>
 						<?php
-			                $success_msg= $this->session->flashdata('success_msg');
+			                $success_msg = $this->session->flashdata('success_msg');
+			                $prohibido = $this->session->flashdata('prohibido');
 			                  if($success_msg){?>
 			                    <script>
 			                    	swal({
@@ -54,6 +55,18 @@
 									title: 'Your work has been saved',
 									showConfirmButton: false,
 									timer: 1600
+									})
+			                    </script>
+			                  <?php
+			              		}
+			                   ?>
+
+			                <?php if($prohibido){?>
+			                    <script>
+			                    	swal({
+									  type: 'error',
+									  title: 'Acceso denegado',
+									  text: 'Usted no puede entrar aqui.'
 									})
 			                    </script>
 			                  <?php

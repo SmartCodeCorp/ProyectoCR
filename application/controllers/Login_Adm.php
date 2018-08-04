@@ -14,18 +14,28 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   		$this->load->view('BackEnd/vw_loginAdm');
   	}
 
-  	public function login(){
-	  	$email = $this->input->post('email');
-	    $password = $this->input->post('password');
+    public function login(){
+        $user_login = array(
+          'email' =>  $this->input->post('email'),
+          'password' => $this->input->post('password')  
+        );
 
-	    $entrar = $this->Mdl_Login->loginAdm($email, $password);
-	    	if ($entrar == 0) {
-	    		$this->index();
-	      	}else{
-	      		$this->session->set_userdata('email', $email);
-	        	redirect('Administrador');
-	      }
-  	}
+        $data = $this->Mdl_Login->loginAdm($user_login['email'], $user_login['password']);
+        if ($data) {
+          $this->session->set_userdata('id_usuario',$data['id_usuario']);
+          $this->session->set_userdata('nombre_usuario',$data['nombre_usuario']);
+          $this->session->set_userdata('apellidos',$data['apellidos']);
+          $this->session->set_userdata('email',$data['email']);
+          $this->session->set_userdata('password',$data['password']);
+          $this->session->set_userdata('telefono',$data['telefono']);
+          $this->session->set_userdata('status_usuario',$data['status_usuario']);
+          $this->session->set_userdata('privilegios',$data['privilegios']);
+          redirect('Administrador');
+        }else{
+            $this->index();
+        }
+         
+      }
 
   	public function frmAddAdmin(){
   		$this->load->view('BackEnd/vw_registroAdm');
@@ -55,6 +65,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
   	public function logout(){
         $this->session->sess_destroy();
+        $this->index();
+    }
+
+    public function prohibido(){
+        $this->session->sess_destroy();
+        $this->session->set_flashdata('prohibido', 'Error');
         $this->index();
     }
   }

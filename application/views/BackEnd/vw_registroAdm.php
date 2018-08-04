@@ -50,8 +50,7 @@
 			                    	swal({
 									  type: 'error',
 									  title: 'Oops...',
-									  text: 'Lo sentimos ese email ya esta registrado!',
-									  footer: '<a href>Why do I have this issue?</a>'
+									  text: 'Lo sentimos ese email ya esta registrado!'
 									})
 			                    </script>
 			                  <?php

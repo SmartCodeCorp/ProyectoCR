@@ -18,17 +18,50 @@
       }
 
       public function login(){
-        $email = $this->input->post('email');
-        $password = $this->input->post('password');
+        $user_login = array(
+          'email' =>  $this->input->post('email'),
+          'password' => $this->input->post('password')  
+        );
 
-        $entrar = $this->Mdl_LoginUser->loginUser($email, $password);
-          if($entrar == 0){
+        $data = $this->Mdl_LoginUser->loginUser($user_login['email'], $user_login['password']);
+        if ($data) {
+          $this->session->set_userdata('id_usuario',$data['id_usuario']);
+          $this->session->set_userdata('nombre_usuario',$data['nombre_usuario']);
+          $this->session->set_userdata('apellidos',$data['apellidos']);
+          $this->session->set_userdata('email',$data['email']);
+          $this->session->set_userdata('password',$data['password']);
+          $this->session->set_userdata('telefono',$data['telefono']);
+          $this->session->set_userdata('status_usuario',$data['status_usuario']);
+          $this->session->set_userdata('privilegios',$data['privilegios']);
+          redirect('MiControlador');
+        }else{
             $this->index();
+        }
+         
+      }
 
-          }else{
-            $this->session->set_userdata('email', $email);
-            redirect('MiControlador');
-          }
+      public function loginCart(){
+        $user_login = array(
+          'email' =>  $this->input->post('email'),
+          'password' => $this->input->post('password')  
+        );
+
+        $data = $this->Mdl_LoginUser->loginUser($user_login['email'], $user_login['password']);
+        if ($data) {
+          $this->session->set_userdata('id_usuario',$data['id_usuario']);
+          $this->session->set_userdata('nombre_usuario',$data['nombre_usuario']);
+          $this->session->set_userdata('apellidos',$data['apellidos']);
+          $this->session->set_userdata('email',$data['email']);
+          $this->session->set_userdata('password',$data['password']);
+          $this->session->set_userdata('telefono',$data['telefono']);
+          $this->session->set_userdata('status_usuario',$data['status_usuario']);
+          $this->session->set_userdata('privilegios',$data['privilegios']);
+          //echo $data['id_usuario'];
+          redirect('Producto/vistaDireccion');
+        }else{
+            $this->vistaLogin();
+        }
+
       }
 
       public function frmAddUser(){
@@ -51,21 +84,24 @@
         if($email_check){
           $this->Mdl_LoginUser->registro_user();
           $this->session->set_flashdata('success_msg', 'Registro exitoso');
-                //redirect('Login_User');
-
+          redirect('Login_User');
         }else{
           $this->session->set_flashdata('error_msg', 'Ya existe el correo que ingresaste');
               redirect('Login_User/frmAddUser');
         }
 
-
-
-
       }
 
+      public function vistaLogin(){
+        $this->session->set_flashdata('procesada', 'Se proceso la compra');
+        $this->load->view('FrontEnd/vw_login');
+      }
+
+      public function salir(){
+        $this->session->sess_destroy();
+        redirect('MiControlador/index/1');
+      }
 
     }
-
-
 
  ?>

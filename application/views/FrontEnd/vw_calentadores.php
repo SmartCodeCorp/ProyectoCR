@@ -29,39 +29,52 @@
             </div>
 
             <div class="row">
+                <?php 
+                    $agregado = $this->session->flashdata('agregado');
+                    if ($agregado) {?>
+                        <script>
+                            swal({
+                              position: 'top-end',
+                              type: 'success',
+                              title: 'Producto agregado',
+                              showConfirmButton: false,
+                              timer: 1700
+                            })
+                        </script>
+                    <?php
+                    }
+                ?>
 
                 <!-- Single Featured Property -->
                 <?php foreach($productos as $producto):
                         if($producto->categorias_id_categoria == 1){
-
-
-
                     ?>
-                      <?php $urlimg = base_url().'assets/uploads/files/' ?>
-
-
                 <div class="col-12 col-md-6 col-xl-4">
                     <div class="single-featured-property mb-50 wow fadeInUp" data-wow-delay="100ms">
                         <!-- Property Thumbnail -->
                         <div class="property-thumb">
-                            <img src="<?=$urlimg.$producto->imagen;?>" alt="">
+                            <img class="imgHW" src="<?=base_url();?>assets/uploads/files/<?=$producto->imagen?>" alt="">
                         </div>
 
                         <!-- Property Content -->
+                        <form action="<?=base_url();?>index.php/Producto/agregarCalentador" method="POST">
+                        <?= form_hidden('id', $producto->id_producto); ?>
                         <div class="property-content">
-                            <h5><?=$producto->nombre_producto; ?></h5>
-                            <p class="location"><img src="<?=base_url();?>/FrontEnd/Template/img/icons/location.png" alt="">STOCK: <?=$producto->unidades_stock; ?></p>
+                            <h3><?=$producto->nombre_producto; ?></h3>
+                            <h4 class="location">STOCK: <?=$producto->unidades_stock; ?></h4>
                             <p>
                                 <?=$producto->descripcion_producto; ?>
                             </p>
-
-                             <div class="list-price">
-                                <p>$<?=$producto->precio_unitario; ?></p>
+                            <div class="list-price">
+                                <h4>$<?=$producto->precio_unitario; ?></h4>
                             </div>
-                          <div align="right">
-                                    <a href="#" class="primary-btn text-uppercase">Añadir al carrito</a>
-                                    </div>
+                            <div align="right">
+                                <button type="submit" class="primary-btn text-uppercase">
+                                Añadir al carrito
+                                </button>
+                            </div>
                         </div>
+                        </form>
                     </div>
                 </div>
             <?php

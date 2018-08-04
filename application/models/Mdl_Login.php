@@ -74,24 +74,26 @@ class Mdl_Login extends CI_Model
     	$this->privilegios = $privilegios;
     }
 
+  public function loginAdm($email, $password){
+    $key = $this->db->select("AES_ENCRYPT('$password','email') as pass")
+          ->get();
+    $mykey = $key->result();
 
-	public function log_in($email, $password){
-		$data = array(
-			'email' => $email,
-			'password' => $password);
-		$this->db->where($data);
-		$usuario = $this->db->get('usuarios');
-		return $usuario->num_rows();
-	}
+    foreach ($mykey as $reg):
+      $pass2 = $reg->pass;
+    endforeach;
 
-	public function loginAdm($email, $password){
-		$data = array(
-			'email' => $email,
-			'password' => $password);
-		$this->db->where($data);
-		$usuario = $this->db->get('usuarios');
-		return $usuario->num_rows();
-	}
+    $data = array(
+      'email' => $email,
+      'password' => $password
+    );
+    $this->db->where($data);
+    if ($query = $this->db->get('usuarios')) {
+      return $query->row_array();
+    }else{
+      return false;
+    }
+}
 
 	public function buscarEmail($email){
 		$this->db->select('*');
@@ -105,12 +107,21 @@ class Mdl_Login extends CI_Model
 		  }
 	}
 
+	public function buscarNombre($email){
+		$this->db->select('nombre_usuario');
+		$this->db->from('usuarios');
+		$this->db->where('email',$email);
+		$query=$this->db->get();
+		return $query->num_rows();
+	}
+
 	public function registro_admin(){
       $this->db->set('id_usuario',0)
                 ->set('nombre_usuario',$this->nombre)
                 ->set('apellidos',$this->apellidos)
                 ->set('email',$this->email)
-                ->set('password',$this->password)
+                ->set('password', "AES_ENCRYPT('{$this->password}',
+                    '{$this->nombre}')", FALSE)
                 ->set('telefono',$this->telefono)
                 ->set('status_usuario',$this->status)
                 ->set('privilegios',$this->privilegios);

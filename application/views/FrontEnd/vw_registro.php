@@ -48,7 +48,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="s12 m12 l12 center">
-				<a href="index.php"><h1>Casa Rocha</h1></a>
+				<a href="<?=base_url().'index.php/MiControlador/index/1';?>"><h1>Casa Rocha</h1></a>
 			</div>
 			<div class="col s12 m12 l12">
 				<br>
@@ -62,8 +62,7 @@
 			              swal({
 			      type: 'error',
 			      title: 'Oops...',
-			      text: 'Lo sentimos ese email ya esta registrado!',
-			      footer: '<a href>Why do I have this issue?</a>'
+			      text: 'Lo sentimos ese email ya esta registrado!'
 			    })
 			            </script>
 			          <?php
