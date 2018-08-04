@@ -128,11 +128,17 @@ $id_usuario = $this->session->userdata('id_usuario');;
                     </div>
                     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
                       <div class="card-body">
-                        <form method="POST" action="<?=base_url().'index.php/Metodos_Pago/paypal';?>">
+                        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                            <input type="hidden" name="cmd" value="_s-xclick">
+                            <input type="hidden" name="hosted_button_id" value="PD6AHQHUPZDFE">
+                            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif" border="0" name="submit" alt="PayPal, la forma más segura y rápida de pagar en línea.">
+                            <img alt="" border="0" src="https://www.paypalobjects.com/es_XC/i/scr/pixel.gif" width="1" height="1">
+                            </form>
+                        <!--<form method="POST" action="<?=base_url().'index.php/Metodos_Pago/paypal';?>">
                             <input type="hidden" name="paypal" value="2">
                             <button class="primary-btn form-control" type="submit">Guardar y continuar
                             </button>
-                        </form>
+                        </form>-->
                       </div>
                     </div>
                   </div>
