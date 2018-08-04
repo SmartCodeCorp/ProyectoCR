@@ -14,7 +14,7 @@
         </div>
     </div>
 </section>
-<?php 
+<?php
     $eliminado = $this->session->flashdata('productoEliminado');
         if ($eliminado) {?>
             <script>
@@ -58,7 +58,7 @@
                                       'success',
                                       location.href ="<?=base_url();?>index.php/Producto/vaciarCarrito"
                                     )
-                                  } else if (           
+                                  } else if (
                                     result.dismiss === swal.DismissReason.cancel
                                   ) {
                                     swalWithBootstrapButtons(
@@ -68,7 +68,7 @@
                                     )
                                   }
                                 })
-                            }        
+                            }
                         </script>
                 <div class="table-responsive textCenter">
                 <table class="table table-sm">
@@ -88,7 +88,7 @@
                             <?php echo $items['name']; ?>
                             <?php if ($this->cart->has_options($items['rowid']) == TRUE): ?>
                                 <p>
-                                    <?php foreach ($this->cart->product_options($items['rowid']) as 
+                                    <?php foreach ($this->cart->product_options($items['rowid']) as
                                     $option_name => $option_value): ?>
                                     <strong><?php echo $option_name; ?>:</strong> <?php echo $option_value; ?><br />
                                     <?php endforeach; ?>
@@ -96,21 +96,21 @@
                             <?php endif; ?>
                         </td>
                         <td>
-                            <img class="imgCart" src="<?=base_url();?>assets/uploads/files/<?=$items['img'];?>" alt="">                                           
-                        </td>         
+                            <img class="imgCart" src="<?=base_url();?>assets/uploads/files/<?=$items['img'];?>" alt="">
+                        </td>
                         <td >
                             <?php echo $this->cart->format_number($items['price']); ?>
                         </td>
                         <td>
-                            <?php echo form_input(array('name' => $i.'[qty]', 'value' => $items['qty'], 'min' => '1', 'max' => '3', 'size' => '5', 'type' => 'number')); ?>                            
+                            <?php echo form_input(array('name' => $i.'[qty]', 'value' => $items['qty'], 'min' => '1', 'max' => '3', 'size' => '5', 'type' => 'number')); ?>
                         </td>
                         <td style="text-align:right">
-                            $<?php echo $this->cart->format_number($items['subtotal']); ?>    
+                            $<?php echo $this->cart->format_number($items['subtotal']); ?>
                         </td>
                         <td>
                             <a href="<?=base_url().'index.php/Producto/eliminarProducto/'. $items['rowid'];?>">
                             <img src="<?=base_url();?>FrontEnd/Template/img/icons/trash-icon.png" width="40px" heigth="40px">
-                            </a>                          
+                            </a>
                         </td>
                     </tr>
                         <?php $i++; ?>
@@ -120,7 +120,7 @@
                             <strong>Total</strong>
                         </td>
                         <td class="right" colspan="2">
-                            $<?php echo $this->cart->format_number($this->cart->total()); ?>        
+                            $<?php echo $this->cart->format_number($this->cart->total()); ?>
                         </td>
                         <td>
                             <a href="<?=base_url();?>index.php/Producto/actualizarCarrito">
@@ -130,7 +130,7 @@
                         <td class="right" colspan="2">
                             <a href="<?=base_url();?>index.php/Login_User/vistaLogin" class="primary-btn text-uppercase">
                                 Procesar
-                                <img src="<?=base_url();?>/FrontEnd/Template/img/shopping-cart-icon" height="10%" width="10%">
+                                <!--<img src="<?=base_url();?>/FrontEnd/Template/img/shopping-cart-icon" height="10%" width="10%">-->
                             </a>
                         </td>
                     </tr>
@@ -143,6 +143,6 @@
         </div>
     </div>
 </section>
-	
+
 </body>
 </html>
