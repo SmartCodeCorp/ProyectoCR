@@ -138,33 +138,34 @@
 
       <?php $urlimg = base_url().'assets/uploads/files/' ?>
 
-      <?php foreach ($newproducts as $new): ?>
-        <div class="single-recent-blog col-lg-4 col-md-4">
-
-          <div class="thumb">
-
-            <img class="f-img img-fluid mx-auto" src="<?=$urlimg.$new->imagen;?>" alt="">
-          </div>
-          <a href="#">
-            <h4>Nombre:&nbsp;<?=$new->nombre_producto;?></h4>
-          </a>
-          <a href="">
-            <h4>Descripción:&nbsp;<?=$new->descripcion_producto;?></h4>
-
-          </a>
-
-          <a href="">
-            <h4>$ &nbsp;<?=$new->precio_unitario;?></h4>
-
-          </a>
-
-          <div align="right">
-                    <a href="#" class="primary-btn text-uppercase">Añadir al carrito</a>
+      <?php foreach ($newproducts as $producto): ?>
+        <div class="col-12 col-md-6 col-xl-4">
+                    <div class="single-featured-property mb-50 wow fadeInUp" data-wow-delay="100ms">
+                        <!-- Property Thumbnail -->
+                        <div class="property-thumb">
+                            <img src="<?=base_url();?>assets/uploads/files/<?=$producto->imagen?>" alt="">
+                        </div>
+                        <!-- Property Content -->
+                        <form action="<?=base_url();?>index.php/Producto/agregarLampara" method="POST">
+                        <?= form_hidden('id', $producto->id_producto); ?>
+                        <div class="property-content">
+                            <h3><?=$producto->nombre_producto; ?></h3>
+                            <h4 class="location">STOCK: <?=$producto->unidades_stock; ?></h4>
+                            <p>
+                                <?=$producto->descripcion_producto; ?>
+                            </p>
+                            <div class="list-price">
+                                <h4>$<?=$producto->precio_unitario; ?></h4>
+                            </div>
+                            <div align="right">
+                                <button type="submit" class="primary-btn text-uppercase">
+                                    Añadir al carrito
+                                </button>
+                            </div>
+                        </div>
+                        </form>
                     </div>
-
-
-        </div>
-
+                </div>
 
 
 
