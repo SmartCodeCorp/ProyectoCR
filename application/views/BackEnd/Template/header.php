@@ -127,17 +127,9 @@ if(!$this->session->has_userdata('email')){
                             <a href="<?=base_url();?>index.php/Categorias">
                                 <i class="fa fa-tags"></i>Categorias</a>
                         </li>
-                        <li class="has-sub">
-                            <a class="js-arrow" href="#">
+                        <li>
+                            <a href="<?=base_url();?>index.php/Administradores">
                                 <i class="fa fa-cogs"></i>Administradores</a>
-                            <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
-                                <li>
-                                    <a href="#">Registro</a>
-                                </li>
-                                <li>
-                                    <a href="#">Forget Password</a>
-                                </li>
-                            </ul>
                         </li>
                         <li class="has-sub">
                             <a class="js-arrow" href="#">
@@ -208,17 +200,9 @@ if(!$this->session->has_userdata('email')){
                             <a href="<?=base_url();?>index.php/Categorias">
                                 <i class="fa fa-tags"></i>Categorias</a>
                         </li>
-                        <li class="#">
-                            <a class="js-arrow" href="#">
+                        <li>
+                            <a href="<?=base_url();?>index.php/Administradores">
                                 <i class="fa fa-cogs"></i>Administradores</a>
-                            <ul class="list-unstyled navbar__sub-list js-sub-list">
-                                <li>
-                                    <a href="#">Registro</a>
-                                </li>
-                                <li>
-                                    <a href="#">Recuperar contraseña</a>
-                                </li>
-                            </ul>
                         </li>
                         <li class="has-sub">
                             <a class="js-arrow" href="#">

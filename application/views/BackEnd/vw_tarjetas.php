@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Direcciones</title>
+	<title>Tarjetas de credito</title>
 	<?php foreach ($css_files as $file): ?>
 		<link rel="stylesheet" type="text/css" href="<?=$file?>">
 	<?php endforeach; ?>

@@ -15,6 +15,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     
       $crud = new grocery_CRUD();
       $crud->set_table('usuarios');
+      $crud->where('privilegios',3);
       $campos = array(
         'nombre_usuario' => 'Nomnbres(s)',
         'apellidos' => 'Apellido(s)',
